@@ -415,7 +415,7 @@ Material:
     - _OuterOutlineDistortionIntensity: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _OuterOutlineNoiseScale: {r: 4, g: 4, b: 0, a: 0}
     - _OuterOutlineNoiseSpeed: {r: 0, g: 0.1, b: 0, a: 0}
-    - _PoisonColor: {r: 0.3137255, g: 2.996078, b: 0.3137255, a: 0}
+    - _PoisonColor: {r: 2.9960783, g: 2.693771, b: 0.3294117, a: 0}
     - _PoisonNoiseScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _PoisonNoiseSpeed: {r: 0, g: -0.2, b: 0, a: 0}
     - _RainbowCenter: {r: 0, g: 0, b: 0, a: 0}
