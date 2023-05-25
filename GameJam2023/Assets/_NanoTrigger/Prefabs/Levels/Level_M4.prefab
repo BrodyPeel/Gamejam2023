@@ -164,6 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7761096157720059386}
   - component: {fileID: 2674699258694533973}
+  - component: {fileID: 8366921376655711910}
   m_Layer: 0
   m_Name: Level_M4
   m_TagString: Untagged
@@ -183,6 +184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2981311458469803515}
   - {fileID: 7401271480403515530}
   - {fileID: 8165453872958380393}
   - {fileID: 7459076244578445087}
@@ -207,8 +209,29 @@ MonoBehaviour:
   clearCount: 0
   depth: 1
   playerShip: {fileID: 0}
-  shipContainer: {fileID: 0}
-  animator: {fileID: 0}
+  shipContainer: {fileID: 8414638448987491302}
+  animator: {fileID: 8366921376655711910}
+--- !u!95 &8366921376655711910
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353401301157086254}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7cf962c399c7bb44ea0efd2b2e1ecffd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2192833329968787933
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +321,7 @@ Transform:
   - {fileID: 1134008509735493166}
   - {fileID: 3542058724145068162}
   m_Father: {fileID: 7761096157720059386}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2492633339805324335
 GameObject:
@@ -340,7 +363,7 @@ Transform:
   - {fileID: 2485286698600777085}
   - {fileID: 1724720505918767003}
   m_Father: {fileID: 7761096157720059386}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2787667382325466057
 GameObject:
@@ -381,7 +404,7 @@ Transform:
   - {fileID: 4707595661035245160}
   - {fileID: 4744240371338799826}
   m_Father: {fileID: 7761096157720059386}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4573984295968560715
 GameObject:
@@ -694,7 +717,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7761096157720059386}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6135474988404665220
 GameObject:
@@ -727,7 +750,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7761096157720059386}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5787256948485368804
 SpriteRenderer:
@@ -989,7 +1012,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7761096157720059386}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7401271480403515529
 SpriteRenderer:
@@ -1057,6 +1080,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parallaxFactorX: -0.2
   parallaxFactorY: -0.2
+--- !u!1 &8414638448987491302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2981311458469803515}
+  m_Layer: 0
+  m_Name: ShipContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2981311458469803515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8414638448987491302}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5159379, w: 0.85662603}
+  m_LocalPosition: {x: -11.59, y: -7.97, z: 0.2610631}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7761096157720059386}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -62.12}
 --- !u!1001 &123643754806954868
 PrefabInstance:
   m_ObjectHideFlags: 0
