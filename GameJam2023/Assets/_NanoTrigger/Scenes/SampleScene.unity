@@ -1141,18 +1141,19 @@ MonoBehaviour:
   - {fileID: 980373962}
   - {fileID: 842312907}
   - {fileID: 980373962}
-  firstBullet: {fileID: 1302116720136135850, guid: 6276cfde09a4a0044a8ad04e22d21c48, type: 3}
   moveSpeed:
   - 1.5
   - 2
   - 3.3
   - 4.5
-  rotationSpeed: 5
   fireRate:
   - 0.2
-  - 1.4
+  - 0.14
   - 0.067
   - 0.034
+  rotationSpeed: 5
+  rotationThreshold: 0.2
+  upgradeLevel: 2
 --- !u!50 &588859968
 Rigidbody2D:
   serializedVersion: 4
@@ -3018,7 +3019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledSmallProjectile: []
   smallProjectile: {fileID: 1302116720136135850, guid: 6276cfde09a4a0044a8ad04e22d21c48, type: 3}
-  amountToPool: 50
+  amountToPool: 400
 --- !u!1 &1886325672
 GameObject:
   m_ObjectHideFlags: 0

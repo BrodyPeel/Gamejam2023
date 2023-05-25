@@ -11,8 +11,9 @@ public class PlayerController : MonoBehaviour
     public GameObject[] guns;   
 
     public float[] moveSpeed;
-    public float rotationSpeed = 5f;
     public float[] fireRate;
+    public float rotationSpeed = 5f;    
+    public float rotationThreshold = 0.2f;
 
     private bool isFiring = false;
     private float nextFireTime = 0f;
@@ -31,15 +32,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (isFiring && Time.time >= nextFireTime)
+        {
+            FireWeapon();
+            nextFireTime = Time.time + fireRate[upgradeLevel - 1];
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        // Read value from control. The type depends on what type of controls.
-        // the action is bound to.        
-        Vector2 v = context.ReadValue<Vector2>();
-        rigidbody.AddForce(v * moveSpeed[upgradeLevel - 1], ForceMode2D.Force);        
+        Vector2 leftStickInput = context.ReadValue<Vector2>();
+
+        // Check if the right stick is not in use
+        if (Gamepad.current != null && Gamepad.current.rightStick.ReadValue().magnitude <= 0f)
+        {
+            // Call RotatePlayer() only when the left stick is used and the right stick is not in use
+            if (leftStickInput.magnitude > 0f)
+            {
+                RotatePlayer(leftStickInput);
+            }
+        }
+
+        rigidbody.AddForce(leftStickInput * moveSpeed[upgradeLevel - 1], ForceMode2D.Force);
     }
 
     public void OnPrimaryFire(InputAction.CallbackContext context)
@@ -47,23 +61,11 @@ public class PlayerController : MonoBehaviour
         joystickInput = context.ReadValue<Vector2>();
 
         // Rotate the player
-        RotatePlayer();
+        RotatePlayer(joystickInput);
 
-        // Handle firing
         if (joystickInput.magnitude > 0f)
         {
-            if (!isFiring)
-            {
-                isFiring = true;
-                nextFireTime = Time.time;
-            }
-
-            // Check if enough time has passed to fire
-            if (Time.time >= nextFireTime)
-            {
-                FireWeapon();
-                nextFireTime = Time.time + fireRate[upgradeLevel - 1];
-            }
+            isFiring = true;
         }
         else
         {
@@ -71,13 +73,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void RotatePlayer()
+    void RotatePlayer(Vector2 joystickInput)
     {
         // Rotate the player based on joystick input
-        if (joystickInput.magnitude > 0f)
+        if (joystickInput.magnitude > rotationThreshold)
         {
             Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, joystickInput);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+        else if (joystickInput.magnitude <= 0.0f)
+        {
+
         }
     }
 
