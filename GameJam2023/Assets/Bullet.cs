@@ -8,9 +8,14 @@ public class Bullet : MonoBehaviour
 
     public float force;
     // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        RB = this.GetComponent<Rigidbody2D>();
+        
+    }
+    void OnEnable()
+    {
+        RB = this.GetComponent<Rigidbody2D>(); 
         RB.AddForce(transform.up * force, ForceMode2D.Impulse);
     }
 

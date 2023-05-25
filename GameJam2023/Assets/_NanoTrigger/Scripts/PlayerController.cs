@@ -8,8 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rigidbody;
 
-    public GameObject[] guns;
-    public GameObject firstBullet;
+    public GameObject[] guns;   
 
     public float[] moveSpeed;
     public float rotationSpeed = 5f;
@@ -19,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private float nextFireTime = 0f;
     private Vector2 joystickInput = Vector2.zero;
 
-    private int upgradeLevel;
+    public int upgradeLevel = 2;
     private float life;
 
     // Start is called before the first frame update
@@ -40,7 +39,7 @@ public class PlayerController : MonoBehaviour
         // Read value from control. The type depends on what type of controls.
         // the action is bound to.        
         Vector2 v = context.ReadValue<Vector2>();
-        rigidbody.AddForce(v * moveSpeed[upgradeLevel], ForceMode2D.Force);        
+        rigidbody.AddForce(v * moveSpeed[upgradeLevel - 1], ForceMode2D.Force);        
     }
 
     public void OnPrimaryFire(InputAction.CallbackContext context)
@@ -63,7 +62,7 @@ public class PlayerController : MonoBehaviour
             if (Time.time >= nextFireTime)
             {
                 FireWeapon();
-                nextFireTime = Time.time + fireRate[upgradeLevel];
+                nextFireTime = Time.time + fireRate[upgradeLevel - 1];
             }
         }
         else
