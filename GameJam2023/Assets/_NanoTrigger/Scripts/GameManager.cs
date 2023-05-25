@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
+    public static GameManager Instance;
 
-    private GameManager() { }
-
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new GameManager();
-            }
-            return instance;
-        }
-    }
+    // Reference to Ship Object. May move later
+    public GameObject ship;
+    new public CameraController camera;
+    public StateController state;
+    public LevelManager levelManager;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     // Update is called once per frame
