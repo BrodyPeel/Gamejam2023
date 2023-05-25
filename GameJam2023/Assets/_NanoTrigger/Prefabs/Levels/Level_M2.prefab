@@ -206,7 +206,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearCount: 0
-  depth: 0
+  depth: 1
+  playerShip: {fileID: 0}
+  shipContainer: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &2122615332978512341
 GameObject:
   m_ObjectHideFlags: 0

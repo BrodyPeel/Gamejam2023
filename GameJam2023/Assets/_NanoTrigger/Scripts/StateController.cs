@@ -6,13 +6,17 @@ public class StateController : MonoBehaviour
 {
     IState currentState;
     public TitleState titleState = new TitleState();
+    public EnterLevelState enterLevelState = new EnterLevelState();
+    public ExitLevelState exitLevelState = new ExitLevelState();
     public PlayState playState = new PlayState();
     public PauseState pauseState = new PauseState();
     public ResultState resultState = new ResultState();
+
     private void Start()
     {
         ChangeState(titleState);
     }
+
     void Update()
     {
         if (currentState != null)
@@ -20,6 +24,7 @@ public class StateController : MonoBehaviour
             currentState.UpdateState(this);
         }
     }
+
     public void ChangeState(IState newState)
     {
         if (currentState != null)
@@ -30,6 +35,7 @@ public class StateController : MonoBehaviour
         currentState.OnEnter(this);
     }
 }
+
 public interface IState
 {
     public void OnEnter(StateController controller);

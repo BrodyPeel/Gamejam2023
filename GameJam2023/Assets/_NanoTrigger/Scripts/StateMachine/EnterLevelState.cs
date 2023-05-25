@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TitleState : IState
+public class EnterLevelState : IState
 {
     public void OnEnter(StateController sc)
     {
         // "What was that!?"
-        GameManager.Instance.camera.AdjustSizeOverTime(6f, 0f);
+        GameManager.Instance.levelManager.currentLevel.StartLevelAnimation();
     }
     public void UpdateState(StateController sc)
     {
