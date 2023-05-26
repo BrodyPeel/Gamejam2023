@@ -20,25 +20,23 @@ public class Enemy : MonoBehaviour
     protected float moveSpeed;
     protected float sightRadius;
     protected float attackRadius;
-
-    private Transform PlayerPosition;
+    protected float rotationSpeed;
+    protected Vector2 enemyPosition;
+    protected Transform PlayerPosition;
+    protected Vector2 playerShipTransform;
 
     // Start is called before the first frame update
     void Start()
     {
         currentState = EnemyState.Idle;
 
-        GameObject playerShip = GameObject.FindGameObjectWithTag("Player");
-        if (playerShip != null)
-        {
-            PlayerPosition = playerShip.transform;
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 playerShipTransform = PlayerPosition.transform.position;
+       
         switch (currentState)
         {
             case EnemyState.Idle:
@@ -56,6 +54,7 @@ public class Enemy : MonoBehaviour
                 //handle death behavior
                 break;
         }
+
     }
 
     public void Death()

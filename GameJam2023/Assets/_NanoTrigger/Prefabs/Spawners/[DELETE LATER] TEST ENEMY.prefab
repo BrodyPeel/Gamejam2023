@@ -178,9 +178,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4083660932427847781}
   - component: {fileID: 5649366320969510532}
-  - component: {fileID: -643729452652701709}
+  - component: {fileID: -3742950180129312475}
+  - component: {fileID: 3018134615588223408}
   m_Layer: 0
-  m_Name: '[DELETE LATER] TestSpawnedObject'
+  m_Name: '[DELETE LATER] TEST ENEMY'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +256,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-643729452652701709
+--- !u!114 &-3742950180129312475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,3 +268,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b8c31a8fa76334c929b4f8b937f97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &3018134615588223408
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182174685202025841}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0
+  m_AngularDrag: 0.08
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -45,10 +45,9 @@ public class Spawner : Enemy
 
     public void SpawnObject()
     {
-        Instantiate(Spawn, this.transform.position, Quaternion.identity);        
-        spawned++;
-        nextSpawn += Time.time + spawnInterval;
-        // TODO subscribe to the 'spawn' OnDeath Event
+        GameObject spawnedObject = Instantiate(Spawn, transform.position, transform.rotation);
+        spawnedObject.GetComponent<Spawned>().OnDeath += HandleSpawnedDeath;
+        spawned++;        
     }
     private void HandleSpawnedDeath()
     {
