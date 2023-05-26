@@ -8,24 +8,26 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rigidbody;
 
-    public GameObject[] guns;   
+    public GameObject[] guns;
 
+    public float boostSpeed;
     public float[] moveSpeed;
     public float[] fireRate;
     public float rotationSpeed = 5f;    
     public float rotationThreshold = 0.2f;
 
+    private bool isBoosting = false;
     private bool isFiring = false;
     private float nextFireTime = 0f;
     private Vector2 joystickInput = Vector2.zero;
 
-    public int upgradeLevel = 2;
+    public int upgradeLevel;
     private float life;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = this.GetComponent<Rigidbody2D>();   
+        rigidbody = this.GetComponent<Rigidbody2D>();       
         
     }
 
@@ -42,7 +44,7 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 leftStickInput = context.ReadValue<Vector2>();
-
+        float speed = isBoosting ? boostSpeed : moveSpeed[upgradeLevel - 1];
         // Check if the right stick is not in use
         if (Gamepad.current != null && Gamepad.current.rightStick.ReadValue().magnitude <= 0f)
         {
@@ -53,7 +55,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        rigidbody.AddForce(leftStickInput * moveSpeed[upgradeLevel - 1], ForceMode2D.Force);
+        rigidbody.AddForce(leftStickInput * speed, ForceMode2D.Force);
     }
 
     public void OnPrimaryFire(InputAction.CallbackContext context)
@@ -103,7 +105,19 @@ public class PlayerController : MonoBehaviour
                 bullet.SetActive(true);
             }
         }
-    }    
+    } 
+    
+    public void OnBoost(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            isBoosting = true;
+        }
+        else
+        {
+            isBoosting = false;
+        }
+    }
     
 }
     
