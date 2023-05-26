@@ -9,7 +9,6 @@ public class TitleMenu : Menu
         // Open the level select menu
         Debug.Log("Play Button Pressed");
         AudioController.Instance.PlaySFX(SFX.Select);
-        MenuController.Instance.ShowMenu(1);
         GameManager.Instance.state.ChangeState(GameManager.Instance.state.enterLevelState);
         Close();
     }

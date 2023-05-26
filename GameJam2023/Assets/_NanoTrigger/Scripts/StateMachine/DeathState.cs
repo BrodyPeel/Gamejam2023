@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayState : IState
+public class DeathState : IState
 {
     public void OnEnter(StateController sc)
     {
-        MenuController.Instance.ShowMenu(1);
+        // "What was that!?"
     }
     public void UpdateState(StateController sc)
     {
-        GameManager.Instance.playtime += Time.deltaTime;
+        // Search for player
     }
     public void OnPause(StateController sc)
     {

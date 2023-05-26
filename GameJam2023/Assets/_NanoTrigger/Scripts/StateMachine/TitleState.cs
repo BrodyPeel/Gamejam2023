@@ -7,6 +7,7 @@ public class TitleState : IState
     public void OnEnter(StateController sc)
     {
         // "What was that!?"
+        MenuController.Instance.screenFader.FadeFromBlack();
         GameManager.Instance.camera.AdjustSizeOverTime(6f, 0f);
     }
     public void UpdateState(StateController sc)

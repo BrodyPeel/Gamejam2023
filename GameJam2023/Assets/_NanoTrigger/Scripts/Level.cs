@@ -59,5 +59,7 @@ public class Level : MonoBehaviour
         // Zoom in camera
         GameManager.Instance.camera.AdjustSizeOverTime(4f, 3f);
 
+        GameManager.Instance.state.ChangeState(GameManager.Instance.state.playState);
+
     }
 }
