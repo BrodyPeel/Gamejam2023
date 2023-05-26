@@ -63,6 +63,12 @@ public class Enemy : MonoBehaviour
 
     }
 
+    public void TakeDamage(float damage)
+    {
+        //animation for damage?
+        health -= damage;
+    }
+
     public void Death()
     {
         OnEnemyDeath?.Invoke();

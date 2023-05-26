@@ -75,6 +75,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnSecondaryFire(InputAction.CallbackContext context)
+    {
+
+    }
+
+    public void OnUltFire(InputAction.CallbackContext context)
+    {
+        //implement 'ultimate' attack that kills everything
+        //limited fire
+    }
+
     void RotatePlayer(Vector2 joystickInput)
     {
         // Rotate the player based on joystick input
@@ -113,7 +124,7 @@ public class PlayerController : MonoBehaviour
         {
             isBoosting = true;
         }
-        else
+        else if (context.canceled)
         {
             isBoosting = false;
         }

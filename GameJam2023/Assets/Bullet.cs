@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
 
     private float deactivateTime = 3.0f;
 
+    public float damage;
     public float force;
     // Start is called before the first frame update
     
@@ -18,6 +19,20 @@ public class Bullet : MonoBehaviour
 
         //deactivate after 5 seconds for testing.
         Invoke("DeactivateBullet", deactivateTime);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the collision is with an enemy
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            // Deal damage to the enemy
+            enemy.TakeDamage(damage);
+        }
+
+        // Destroy the bullet
+        DeactivateBullet();
     }
 
     private void DeactivateBullet()

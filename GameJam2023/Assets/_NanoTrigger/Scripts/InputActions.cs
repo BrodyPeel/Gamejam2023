@@ -37,6 +37,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Boost"",
+                    ""type"": ""Button"",
+                    ""id"": ""621268c6-d685-40e6-8835-fb3798eadfca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""PrimaryFire"",
                     ""type"": ""Value"",
                     ""id"": ""6c3dd473-446e-45d8-bd77-10fd8ff7957c"",
@@ -49,6 +58,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""name"": ""SecondaryFire"",
                     ""type"": ""Button"",
                     ""id"": ""65bc4716-fecc-478e-8493-853375d558be"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UltFire"",
+                    ""type"": ""Button"",
+                    ""id"": ""923beb95-fb9a-4906-b07b-7fdf7c3d3c69"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -106,6 +124,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Controller device"",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bcd743d0-bf23-4de2-aeb2-f5dae33a34f8"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Boost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7975792d-f8be-4dbc-bb0d-23f83e9b9120"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UltFire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -274,8 +314,10 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
+        m_Gameplay_Boost = m_Gameplay.FindAction("Boost", throwIfNotFound: true);
         m_Gameplay_PrimaryFire = m_Gameplay.FindAction("PrimaryFire", throwIfNotFound: true);
         m_Gameplay_SecondaryFire = m_Gameplay.FindAction("SecondaryFire", throwIfNotFound: true);
+        m_Gameplay_UltFire = m_Gameplay.FindAction("UltFire", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         // Menus
         m_Menus = asset.FindActionMap("Menus", throwIfNotFound: true);
@@ -344,16 +386,20 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_Move;
+    private readonly InputAction m_Gameplay_Boost;
     private readonly InputAction m_Gameplay_PrimaryFire;
     private readonly InputAction m_Gameplay_SecondaryFire;
+    private readonly InputAction m_Gameplay_UltFire;
     private readonly InputAction m_Gameplay_Pause;
     public struct GameplayActions
     {
         private @InputActions m_Wrapper;
         public GameplayActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
+        public InputAction @Boost => m_Wrapper.m_Gameplay_Boost;
         public InputAction @PrimaryFire => m_Wrapper.m_Gameplay_PrimaryFire;
         public InputAction @SecondaryFire => m_Wrapper.m_Gameplay_SecondaryFire;
+        public InputAction @UltFire => m_Wrapper.m_Gameplay_UltFire;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
@@ -367,12 +413,18 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Boost.started += instance.OnBoost;
+            @Boost.performed += instance.OnBoost;
+            @Boost.canceled += instance.OnBoost;
             @PrimaryFire.started += instance.OnPrimaryFire;
             @PrimaryFire.performed += instance.OnPrimaryFire;
             @PrimaryFire.canceled += instance.OnPrimaryFire;
             @SecondaryFire.started += instance.OnSecondaryFire;
             @SecondaryFire.performed += instance.OnSecondaryFire;
             @SecondaryFire.canceled += instance.OnSecondaryFire;
+            @UltFire.started += instance.OnUltFire;
+            @UltFire.performed += instance.OnUltFire;
+            @UltFire.canceled += instance.OnUltFire;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
@@ -383,12 +435,18 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Boost.started -= instance.OnBoost;
+            @Boost.performed -= instance.OnBoost;
+            @Boost.canceled -= instance.OnBoost;
             @PrimaryFire.started -= instance.OnPrimaryFire;
             @PrimaryFire.performed -= instance.OnPrimaryFire;
             @PrimaryFire.canceled -= instance.OnPrimaryFire;
             @SecondaryFire.started -= instance.OnSecondaryFire;
             @SecondaryFire.performed -= instance.OnSecondaryFire;
             @SecondaryFire.canceled -= instance.OnSecondaryFire;
+            @UltFire.started -= instance.OnUltFire;
+            @UltFire.performed -= instance.OnUltFire;
+            @UltFire.canceled -= instance.OnUltFire;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
@@ -483,8 +541,10 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IGameplayActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnBoost(InputAction.CallbackContext context);
         void OnPrimaryFire(InputAction.CallbackContext context);
         void OnSecondaryFire(InputAction.CallbackContext context);
+        void OnUltFire(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
     }
     public interface IMenusActions

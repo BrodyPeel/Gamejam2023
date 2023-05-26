@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Boost",
+                    "type": "Button",
+                    "id": "621268c6-d685-40e6-8835-fb3798eadfca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "PrimaryFire",
                     "type": "Value",
                     "id": "6c3dd473-446e-45d8-bd77-10fd8ff7957c",
@@ -27,6 +36,15 @@
                     "name": "SecondaryFire",
                     "type": "Button",
                     "id": "65bc4716-fecc-478e-8493-853375d558be",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UltFire",
+                    "type": "Button",
+                    "id": "923beb95-fb9a-4906-b07b-7fdf7c3d3c69",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -84,6 +102,28 @@
                     "processors": "",
                     "groups": "Controller device",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bcd743d0-bf23-4de2-aeb2-f5dae33a34f8",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Boost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7975792d-f8be-4dbc-bb0d-23f83e9b9120",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UltFire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
