@@ -16,11 +16,17 @@ public class Enemy : MonoBehaviour
     protected event enemyDeathHandler OnEnemyDeath;
 
     protected EnemyState currentState;
+    [SerializeField]
     protected float health;
+    [SerializeField]
     protected float moveSpeed;
+    [SerializeField]
     protected float sightRadius;
+    [SerializeField]
     protected float attackRadius;
+    [SerializeField]
     protected float rotationSpeed;
+
     protected Vector2 enemyPosition;
     protected Transform PlayerPosition;
     protected Vector2 playerShipTransform;

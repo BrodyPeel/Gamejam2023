@@ -9,6 +9,7 @@ public class StateController : MonoBehaviour
     public EnterLevelState enterLevelState = new EnterLevelState();
     public ExitLevelState exitLevelState = new ExitLevelState();
     public PlayState playState = new PlayState();
+    public DeathState deathState = new DeathState();
     public PauseState pauseState = new PauseState();
     public ResultState resultState = new ResultState();
 

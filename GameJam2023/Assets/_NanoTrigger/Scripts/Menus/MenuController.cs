@@ -7,6 +7,10 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Menu[] menus;
     [SerializeField] private Menu currentMenu;
 
+    public ResultsMenu resultsMenu;
+
+    public ScreenFader screenFader;
+
     private void Awake()
     {
         if (Instance == null)
@@ -34,5 +38,16 @@ public class MenuController : MonoBehaviour
 
         menus[menuIndex].Open();
         currentMenu = menus[menuIndex];
+    }
+
+    public void ShowMenu(Menu menu)
+    {
+        if (currentMenu != null)
+        {
+            currentMenu.Close();
+        }
+
+        menu.Open();
+        currentMenu = menu;
     }
 }

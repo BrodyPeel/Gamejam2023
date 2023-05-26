@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawn: {fileID: 9182174685202025841, guid: 38ef04c72799ebb4c8f5382da7546ef6, type: 3}
-  spawnMax: 10
-  spawnInterval: 1.5
+  spawnMax: 5
+  spawnInterval: 5

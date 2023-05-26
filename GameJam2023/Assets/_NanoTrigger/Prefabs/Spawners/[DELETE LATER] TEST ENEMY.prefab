@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 565157503
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 6ed3723b4d4cf2548988a20b9246082d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 565157503
   m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: bd9e009139836b946bfd80b1383b12dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 5649366320969510532}
   - component: {fileID: -3742950180129312475}
   - component: {fileID: 3018134615588223408}
+  - component: {fileID: 5210261080130803138}
   m_Layer: 0
   m_Name: '[DELETE LATER] TEST ENEMY'
   m_TagString: Untagged
@@ -244,7 +245,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 565157503
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 6b48c9788d8234e478348f0947b80065, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -268,6 +269,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b8c31a8fa76334c929b4f8b937f97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
+  moveSpeed: 0.3
+  sightRadius: 2
+  attackRadius: 1
+  rotationSpeed: 4
 --- !u!50 &3018134615588223408
 Rigidbody2D:
   serializedVersion: 4
@@ -282,10 +288,26 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 2
   m_LinearDrag: 0
-  m_AngularDrag: 0.08
+  m_AngularDrag: 0.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &5210261080130803138
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182174685202025841}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.92499995
