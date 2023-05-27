@@ -34,113 +34,136 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isFiring && Time.time >= nextFireTime)
+        if (GameManager.Instance.state.isState("PlayState"))
         {
-            FireWeapon();
-            nextFireTime = Time.time + fireRate[upgradeLevel - 1];
-        }
+            if (isFiring && Time.time >= nextFireTime)
+            {
+                FireWeapon();
+                nextFireTime = Time.time + fireRate[upgradeLevel - 1];
+            }
 
-        if (upgradeLevel > 1 && life == 0)
-        {
-            upgradeLevel--;
-            life = 3;
-        }
-        else if (upgradeLevel <= 1 && life <= 0)
-        {
-            Death();
+            if (upgradeLevel > 1 && life == 0)
+            {
+                upgradeLevel--;
+                life = 3;
+            }
+            else if (upgradeLevel <= 1 && life <= 0)
+            {
+                Death();
+            }
         }
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        Vector2 leftStickInput = context.ReadValue<Vector2>();
-        float speed = isBoosting ? boostSpeed : moveSpeed[upgradeLevel - 1];
-        // Check if the right stick is not in use
-        if (Gamepad.current != null && Gamepad.current.rightStick.ReadValue().magnitude <= 0f)
+        if (GameManager.Instance.state.isState("PlayState"))
         {
-            // Call RotatePlayer() only when the left stick is used and the right stick is not in use
-            if (leftStickInput.magnitude > 0f)
+            Vector2 leftStickInput = context.ReadValue<Vector2>();
+            float speed = isBoosting ? boostSpeed : moveSpeed[upgradeLevel - 1];
+            // Check if the right stick is not in use
+            if (Gamepad.current != null && Gamepad.current.rightStick.ReadValue().magnitude <= 0f)
             {
-                RotatePlayer(leftStickInput);
+                // Call RotatePlayer() only when the left stick is used and the right stick is not in use
+                if (leftStickInput.magnitude > 0f)
+                {
+                    RotatePlayer(leftStickInput);
+                }
             }
-        }
 
-        rigidbody.AddForce(leftStickInput * speed, ForceMode2D.Force);
+            rigidbody.AddForce(leftStickInput * speed, ForceMode2D.Force);
+        }
     }
 
     public void OnPrimaryFire(InputAction.CallbackContext context)
     {
-        joystickInput = context.ReadValue<Vector2>();
-
-        // Rotate the player
-        RotatePlayer(joystickInput);
-
-        if (joystickInput.magnitude > 0f)
+        if (GameManager.Instance.state.isState("PlayState"))
         {
-            isFiring = true;
-        }
-        else
-        {
-            isFiring = false;
+            joystickInput = context.ReadValue<Vector2>();
+
+            // Rotate the player
+            RotatePlayer(joystickInput);
+
+            if (joystickInput.magnitude > 0f)
+            {
+                isFiring = true;
+            }
+            else
+            {
+                isFiring = false;
+            }
         }
     }
 
     public void OnSecondaryFire(InputAction.CallbackContext context)
     {
+        if (GameManager.Instance.state.isState("PlayState"))
+        {
 
+        }
     }
 
     public void OnUltFire(InputAction.CallbackContext context)
     {
-        //implement 'ultimate' attack that kills everything
-        //limited fire
+        if (GameManager.Instance.state.isState("PlayState"))
+        {
+            //implement 'ultimate' attack that kills everything
+            //limited fire
+        }
     }
 
     void RotatePlayer(Vector2 joystickInput)
     {
-        // Rotate the player based on joystick input
-        if (joystickInput.magnitude > rotationThreshold)
+        if (GameManager.Instance.state.isState("PlayState"))
         {
-            Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, joystickInput);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        }
-        else if (joystickInput.magnitude <= 0.0f)
-        {
+            // Rotate the player based on joystick input
+            if (joystickInput.magnitude > rotationThreshold)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, joystickInput);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
+            else if (joystickInput.magnitude <= 0.0f)
+            {
 
+            }
         }
     }
 
     void FireWeapon()
     {
-        //pull bullet from object pool based on upgrade level
-        //spawn the bullet at the appropriate gun position/rotation
-        int numberOfBulletsToFire = upgradeLevel;
-
-        if (upgradeLevel < 4)
+        if (GameManager.Instance.state.isState("PlayState"))
         {
-            for (int i = 0; i < numberOfBulletsToFire; i++)
+
+
+            //pull bullet from object pool based on upgrade level
+            //spawn the bullet at the appropriate gun position/rotation
+            int numberOfBulletsToFire = upgradeLevel;
+
+            if (upgradeLevel < 4)
             {
-                GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
-                if (bullet != null)
+                for (int i = 0; i < numberOfBulletsToFire; i++)
                 {
-                    bullet.transform.position = guns[i].transform.position;
-                    bullet.transform.rotation = guns[i].transform.rotation;
-                    bullet.SetActive(true);
-                    AudioController.Instance.PlaySFX(SFX.Fire1);
+                    GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
+                    if (bullet != null)
+                    {
+                        bullet.transform.position = guns[i].transform.position;
+                        bullet.transform.rotation = guns[i].transform.rotation;
+                        bullet.SetActive(true);
+                        AudioController.Instance.PlaySFX(SFX.Fire1);
+                    }
                 }
             }
-        }
-        else if (upgradeLevel == 4)
-        {
-            for (int i = 0; i < numberOfBulletsToFire; i++)
+            else if (upgradeLevel == 4)
             {
-                GameObject bullet = ObjectPool.SharedInstance.GetPooledLargeObject();
-                if (bullet != null)
+                for (int i = 0; i < numberOfBulletsToFire; i++)
                 {
-                    bullet.transform.position = guns[i].transform.position;
-                    bullet.transform.rotation = guns[i].transform.rotation;
-                    bullet.SetActive(true);
-                    AudioController.Instance.PlaySFX(SFX.Fire1);
+                    GameObject bullet = ObjectPool.SharedInstance.GetPooledLargeObject();
+                    if (bullet != null)
+                    {
+                        bullet.transform.position = guns[i].transform.position;
+                        bullet.transform.rotation = guns[i].transform.rotation;
+                        bullet.SetActive(true);
+                        AudioController.Instance.PlaySFX(SFX.Fire1);
+                    }
                 }
             }
         }
@@ -148,13 +171,16 @@ public class PlayerController : MonoBehaviour
     
     public void OnBoost(InputAction.CallbackContext context)
     {
-        if(context.started)
+        if (GameManager.Instance.state.isState("PlayState"))
         {
-            isBoosting = true;
-        }
-        else if (context.canceled)
-        {
-            isBoosting = false;
+            if (context.started)
+            {
+                isBoosting = true;
+            }
+            else if (context.canceled)
+            {
+                isBoosting = false;
+            }
         }
     }
 

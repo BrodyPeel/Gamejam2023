@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawned : Enemy
+public class MeleeEnemy : Enemy
 {
-    public delegate void SpawnedDeathEventHandler();
-    public event SpawnedDeathEventHandler OnDeath;
     Rigidbody2D rb;
-    
 
-    // Start is called before the first frame update
     void Start()
     {
         health = 15.0f;
@@ -29,7 +25,7 @@ public class Spawned : Enemy
 
     // Update is called once per frame
     void Update()
-    {        
+    {
         playerShipTransform = PlayerPosition.transform.position;
         enemyPosition = this.transform.position;
 
@@ -87,12 +83,12 @@ public class Spawned : Enemy
             }
         }
     }
+
     private void HandleDeath()
     {
         // Perform death animation
         //stop movement        
-        // Invoke the event
-        OnDeath?.Invoke();
+        // Invoke the event        
         Death();
         Destroy(this.gameObject);
     }

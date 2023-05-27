@@ -23,24 +23,27 @@ public class Spawner : Enemy
     // Update is called once per frame
     void Update()
     {
-        if (Spawn != null)
+        if (GameManager.Instance.state.isState("PlayState"))
         {
-            if (spawned < spawnMax && Time.time >= nextSpawn)
+            if (Spawn != null)
             {
-                //TODO update spawn position?
-                SpawnObject();
-                
-            }
-        }
-        else
-        {
-            Debug.Log("There is no Spawn Object");
-        }
+                if (spawned < spawnMax && Time.time >= nextSpawn)
+                {
+                    //TODO update spawn position?
+                    SpawnObject();
 
-        if (health <= 0.0f)
-        {
-            Death();
-            Destroy(this.gameObject);
+                }
+            }
+            else
+            {
+                Debug.Log("There is no Spawn Object");
+            }
+
+            if (health <= 0.0f)
+            {
+                Death();
+                Destroy(this.gameObject);
+            }
         }
     }    
 

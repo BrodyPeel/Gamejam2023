@@ -12,7 +12,7 @@ public enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
-    protected delegate void enemyDeathHandler();
+    protected delegate void enemyDeathHandler(bool x);
     protected event enemyDeathHandler OnEnemyDeath;
 
     protected EnemyState currentState;
@@ -79,7 +79,12 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
-        OnEnemyDeath?.Invoke();
+        OnEnemyDeath?.Invoke(false);
+    }
+
+    public void Spawn()
+    {
+        OnEnemyDeath?.Invoke(true);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
