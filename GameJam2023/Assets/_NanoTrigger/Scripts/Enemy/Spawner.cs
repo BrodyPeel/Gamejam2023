@@ -40,6 +40,7 @@ public class Spawner : Enemy
         if (health <= 0.0f)
         {
             Death();
+            Destroy(this);
         }
     }    
 

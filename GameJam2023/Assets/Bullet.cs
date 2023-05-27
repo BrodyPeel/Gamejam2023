@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
         RB.AddForce(transform.up * force, ForceMode2D.Impulse);
 
         //deactivate after 5 seconds for testing.
-        Invoke("DeactivateBullet", deactivateTime);
+        //Invoke("DeactivateBullet", deactivateTime);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

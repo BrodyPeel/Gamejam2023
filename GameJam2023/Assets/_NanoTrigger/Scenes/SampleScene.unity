@@ -498,6 +498,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 399059332}
   SFXSource: {fileID: 399059331}
+  musicVolume: 0
+  SFXVolume: 0
   musicClips: []
   sfxClips:
   - sfx: 0
@@ -1006,6 +1008,26 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9d34468f-510c-4571-8e71-62cefb9793e0
     m_ActionName: Menus/Back[/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 588859967}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnBoost
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 621268c6-d685-40e6-8835-fb3798eadfca
+    m_ActionName: Gameplay/Boost[/DualShock4GamepadHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 923beb95-fb9a-4906-b07b-7fdf7c3d3c69
+    m_ActionName: Gameplay/UltFire[/DualShock4GamepadHID/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -1042,6 +1064,7 @@ MonoBehaviour:
   rotationSpeed: 5
   rotationThreshold: 0.2
   upgradeLevel: 2
+  life: 0
 --- !u!50 &588859968
 Rigidbody2D:
   serializedVersion: 4
@@ -2893,7 +2916,9 @@ MonoBehaviour:
   - {fileID: 2121897794}
   currentMenu: {fileID: 0}
   resultsMenu: {fileID: 0}
+  pauseMenu: {fileID: 0}
   screenFader: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!1 &1885323857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2959,8 +2984,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledSmallProjectile: []
+  pooledLargeProjectile: []
+  pooledEnemyProjectileOne: []
+  pooledEnemyProjectileTwo: []
   smallProjectile: {fileID: 1302116720136135850, guid: 6276cfde09a4a0044a8ad04e22d21c48, type: 3}
+  largeProjectile: {fileID: 0}
+  enemyProjectileOne: {fileID: 0}
+  enemyProjectileTwo: {fileID: 0}
   amountToPool: 400
+  amountToPoolEnemy: 0
 --- !u!1 &1886325672
 GameObject:
   m_ObjectHideFlags: 0

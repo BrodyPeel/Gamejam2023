@@ -8,7 +8,6 @@ public class Spawned : Enemy
     public event SpawnedDeathEventHandler OnDeath;
     Rigidbody2D rb;
     
-    
 
     // Start is called before the first frame update
     void Start()
@@ -35,26 +34,36 @@ public class Spawned : Enemy
         Debug.Log(playerShipTransform);
         playerShipTransform = PlayerPosition.transform.position;
         enemyPosition = this.transform.position;
+
         if (health <= 0.0f)
         {
-            HandleDeath();
+            currentState = EnemyState.Death;
         }
 
         //if idle move about freely
-        if(currentState == EnemyState.Idle)
+        if (currentState == EnemyState.Idle)
         {
-            Move();
+            if (canMove)
+            {
+                Move();
+            }
         }
-        else if(currentState == EnemyState.Chase)
+        else if (currentState == EnemyState.Chase)
         {
-            Chase();
+            if (canMove)
+            {
+                Chase();
+            }
         }
-        else if(currentState == EnemyState.Attack)
+        else if (currentState == EnemyState.Attack)
         {
-            Chase();
-            Attack();
+            if (canMove)
+            {
+                Chase();
+            }
+                Attack();            
         }
-        else if(currentState == EnemyState.Death)
+        else if (currentState == EnemyState.Death)
         {
             HandleDeath();
         }
@@ -85,6 +94,7 @@ public class Spawned : Enemy
         //stop movement        
         // Invoke the event
         OnDeath?.Invoke();
+        Death();
         Destroy(this);
     }
 

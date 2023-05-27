@@ -26,6 +26,10 @@ public class Enemy : MonoBehaviour
     protected float attackRadius;
     [SerializeField]
     protected float rotationSpeed;
+    [SerializeField]
+    protected bool canMove = false;
+    [SerializeField]
+    protected float damage;
 
     protected Vector2 enemyPosition;
     protected Transform PlayerPosition;
@@ -34,9 +38,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentState = EnemyState.Idle;
-
-        
+        currentState = EnemyState.Idle;       
     }
 
     // Update is called once per frame
@@ -61,6 +63,12 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
+        if(health <= 0)
+        {
+            Death();
+            Destroy(this.gameObject);
+        }
+
     }
 
     public void TakeDamage(float damage)
@@ -72,5 +80,13 @@ public class Enemy : MonoBehaviour
     public void Death()
     {
         OnEnemyDeath?.Invoke();
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerController>().Damage(damage);
+        }
     }
 }

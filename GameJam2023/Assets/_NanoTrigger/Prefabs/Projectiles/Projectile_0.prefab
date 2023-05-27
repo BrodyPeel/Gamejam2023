@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6658963853951463819}
   - component: {fileID: 3067492326229235359}
   - component: {fileID: -2588301557969260966}
-  - component: {fileID: 7038802639650533474}
+  - component: {fileID: 2649430879812281180}
   m_Layer: 0
   m_Name: Projectile_0
   m_TagString: PlayerProjectile
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bf6493a63607f4886da44dc3269cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 1
   force: 10
 --- !u!50 &-2588301557969260966
 Rigidbody2D:
@@ -122,14 +122,14 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &7038802639650533474
+--- !u!70 &2649430879812281180
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302116720136135850}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

@@ -39,6 +39,16 @@ public class PlayerController : MonoBehaviour
             FireWeapon();
             nextFireTime = Time.time + fireRate[upgradeLevel - 1];
         }
+
+        if (upgradeLevel > 1 && life == 0)
+        {
+            upgradeLevel--;
+            life = 3;
+        }
+        else if (upgradeLevel <= 1 && life <= 0)
+        {
+            Death();
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -106,15 +116,32 @@ public class PlayerController : MonoBehaviour
         //spawn the bullet at the appropriate gun position/rotation
         int numberOfBulletsToFire = upgradeLevel;
 
-        for (int i = 0; i < numberOfBulletsToFire; i++)
+        if (upgradeLevel < 4)
         {
-            GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
-            if (bullet != null)
+            for (int i = 0; i < numberOfBulletsToFire; i++)
             {
-                bullet.transform.position = guns[i].transform.position;
-                bullet.transform.rotation = guns[i].transform.rotation;
-                bullet.SetActive(true);
-                AudioController.Instance.PlaySFX(SFX.Fire1);
+                GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
+                if (bullet != null)
+                {
+                    bullet.transform.position = guns[i].transform.position;
+                    bullet.transform.rotation = guns[i].transform.rotation;
+                    bullet.SetActive(true);
+                    AudioController.Instance.PlaySFX(SFX.Fire1);
+                }
+            }
+        }
+        else if (upgradeLevel == 4)
+        {
+            for (int i = 0; i < numberOfBulletsToFire; i++)
+            {
+                GameObject bullet = ObjectPool.SharedInstance.GetPooledLargeObject();
+                if (bullet != null)
+                {
+                    bullet.transform.position = guns[i].transform.position;
+                    bullet.transform.rotation = guns[i].transform.rotation;
+                    bullet.SetActive(true);
+                    AudioController.Instance.PlaySFX(SFX.Fire1);
+                }
             }
         }
     } 
@@ -130,7 +157,23 @@ public class PlayerController : MonoBehaviour
             isBoosting = false;
         }
     }
-    
+
+    public void Damage(float Damage)
+    {
+        life -= Damage;
+        if(life <= 0)
+        {
+            life = 0;
+        }
+    }
+
+    public void Death()
+    {
+        //death animation
+        //results screen
+        Destroy(this.gameObject);
+    }   
+
 }
     
     
