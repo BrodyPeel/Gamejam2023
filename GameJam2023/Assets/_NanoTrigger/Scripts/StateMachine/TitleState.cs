@@ -11,7 +11,7 @@ public class TitleState : IState
         // "What was that!?"
         MenuController.Instance.screenFader.FadeFromBlack();
         GameManager.Instance.camera.AdjustSizeOverTime(6f, 0f);
-        AudioController.Instance.PlayMusic(Music.NTLoop);
+        AudioController.Instance.PlayMusic(Music.NTLoop, true);
     }
     public void UpdateState(StateController sc)
     {

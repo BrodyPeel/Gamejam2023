@@ -507,6 +507,7 @@ GameObject:
   - component: {fileID: 399059333}
   - component: {fileID: 399059332}
   - component: {fileID: 399059331}
+  - component: {fileID: 399059334}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -744,19 +745,33 @@ MonoBehaviour:
   - sfx: 0
     clip: {fileID: 8300000, guid: 3161a0bf8b90f15409d14e192575ac63, type: 3}
   - sfx: 1
-    clip: {fileID: 8300000, guid: 249e5f28e9c9ed64c80d75b4269da347, type: 3}
+    clip: {fileID: 8300000, guid: 9bf2a1198698f6842aa0818182620050, type: 3}
   - sfx: 2
-    clip: {fileID: 8300000, guid: b475417ae1bb7254a81cb0b3766b26e3, type: 3}
+    clip: {fileID: 8300000, guid: 32dba2edfb38d3f409347baa9d6065dd, type: 3}
   - sfx: 3
-    clip: {fileID: 8300000, guid: 01e65f31908034d41bac643f52804c2a, type: 3}
+    clip: {fileID: 8300000, guid: 258183060e439d447ad50afe5154ca86, type: 3}
   - sfx: 4
-    clip: {fileID: 8300000, guid: 6e73b80b71323544e9cbc49be8125ee4, type: 3}
+    clip: {fileID: 8300000, guid: 8afeee0576498b045a40427608f7ce48, type: 3}
   - sfx: 5
     clip: {fileID: 8300000, guid: 51e98c1687f3baf4895595c1a2810d40, type: 3}
   - sfx: 6
     clip: {fileID: 8300000, guid: 8ada620266ec87747af1f829be4f3e1a, type: 3}
   - sfx: 7
     clip: {fileID: 8300000, guid: 98f3e01ad5a726d45a66576f70989d6c, type: 3}
+--- !u!114 &399059334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399059329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1db8a651fd24f4b9ebca291f7aca93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1951544366576775838, guid: d6c6936c3770bf642b32465d3b6177a9, type: 3}
+  poolSize: 5
 --- !u!1 &405735667
 GameObject:
   m_ObjectHideFlags: 0
