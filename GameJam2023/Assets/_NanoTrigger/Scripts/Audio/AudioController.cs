@@ -100,7 +100,7 @@ public class AudioController : MonoBehaviour
     {
         if (sfxDictionary.TryGetValue(sfx, out AudioClip clip))
         {
-            SFXPool.PlaySound(clip, SFXVolume, loop);
+            SFXPool.PlaySound(clip, SFXVolume, loop, transform);
         }
         else
         {
@@ -108,11 +108,11 @@ public class AudioController : MonoBehaviour
         }
     }
 
-    public AudioSource PlaySFX(SFX sfx, Vector3 sfxPosition, bool loop = false, float volume = 1f)
+    public AudioSource PlaySFX(SFX sfx, Transform parentTransform, Vector3 sfxPosition, bool loop = false, float volume = 1f)
     {
         if (sfxDictionary.TryGetValue(sfx, out AudioClip clip))
         {
-            AudioSource sfxSource = SFXPool.PlaySound(clip, volume, loop);
+            AudioSource sfxSource = SFXPool.PlaySound(clip, volume, loop, parentTransform);
             if (sfxSource != null)
             {
                 sfxSource.transform.position = sfxPosition;
@@ -126,5 +126,4 @@ public class AudioController : MonoBehaviour
             return null;
         }
     }
-
 }

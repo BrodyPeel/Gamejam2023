@@ -27180,10 +27180,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4013952812011708694}
     m_Modifications:
-    - target: {fileID: 6601798220579684762, guid: 74850f22d395f0042925421154f71692, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6601798220579684763, guid: 74850f22d395f0042925421154f71692, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -27232,10 +27228,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner_0
       objectReference: {fileID: 0}
-    - target: {fileID: 7409378020081195937, guid: 74850f22d395f0042925421154f71692, type: 3}
-      propertyPath: Spawn
-      value: 
-      objectReference: {fileID: 9182174685202025841, guid: 0da66a8bd3a30fd4bbb2d5944c6c836f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74850f22d395f0042925421154f71692, type: 3}
 --- !u!4 &4508758033545280761 stripped

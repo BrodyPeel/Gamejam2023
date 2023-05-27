@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 166324148}
   m_Layer: 7
   m_Name: RightNozzle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -568,7 +568,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 565157503
   m_SortingLayer: 2
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0916ad8ba69bb0e419d1c5b98b32098e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 294630897}
   m_Layer: 7
   m_Name: LeftBarrel (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 389874518}
   m_Layer: 7
   m_Name: RightTip
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -797,8 +797,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 399059335}
   SFXPool: {fileID: 399059334}
-  musicVolume: 1
-  SFXVolume: 0.8
+  musicVolume: 0.5
+  SFXVolume: 1
   musicClips:
   - music: 0
     clip: {fileID: 8300000, guid: 318506d52160c4349856c2cd0942b3f0, type: 3}
@@ -826,7 +826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1951544366576775838, guid: d6c6936c3770bf642b32465d3b6177a9, type: 3}
-  poolSize: 25
+  poolSize: 200
 --- !u!82 &399059335
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 475096401}
   m_Layer: 7
   m_Name: Chassis
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1482,7 +1482,7 @@ MonoBehaviour:
   - 0.2
   rotationSpeed: 5
   rotationThreshold: 0.2
-  upgradeLevel: 3
+  upgradeLevel: 4
   life: 10
 --- !u!50 &588859968
 Rigidbody2D:
@@ -2107,7 +2107,7 @@ GameObject:
   - component: {fileID: 842312909}
   m_Layer: 7
   m_Name: LeftGun
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2193,7 +2193,7 @@ GameObject:
   - component: {fileID: 849163923}
   m_Layer: 7
   m_Name: LeftNozzle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2254,7 +2254,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 565157503
   m_SortingLayer: 2
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 024efff3042792d4fa50fa0984c24f37, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2413,7 +2413,7 @@ GameObject:
   - component: {fileID: 910989229}
   m_Layer: 7
   m_Name: RightTip
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2497,7 +2497,7 @@ GameObject:
   - component: {fileID: 968151152}
   m_Layer: 7
   m_Name: LeftBarrel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2582,7 +2582,7 @@ GameObject:
   - component: {fileID: 980373964}
   m_Layer: 7
   m_Name: RightGun
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2699,7 +2699,7 @@ GameObject:
   - component: {fileID: 1112449081}
   m_Layer: 7
   m_Name: RightNozzle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3144,7 +3144,7 @@ GameObject:
   - component: {fileID: 1281921604}
   m_Layer: 7
   m_Name: Engine
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3228,7 +3228,7 @@ GameObject:
   - component: {fileID: 1291989654}
   m_Layer: 7
   m_Name: RightBarrel (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3404,7 +3404,7 @@ GameObject:
   - component: {fileID: 1296411600}
   m_Layer: 7
   m_Name: LeftTip
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3873,7 +3873,7 @@ GameObject:
   - component: {fileID: 1406052647}
   m_Layer: 7
   m_Name: RightBarrel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3958,7 +3958,7 @@ GameObject:
   - component: {fileID: 1597252295}
   m_Layer: 7
   m_Name: LeftTip
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4310,7 +4310,7 @@ GameObject:
   - component: {fileID: 1749838053}
   m_Layer: 7
   m_Name: Lights
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4995,7 +4995,7 @@ GameObject:
   - component: {fileID: 2031435657}
   m_Layer: 7
   m_Name: LeftNozzle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
