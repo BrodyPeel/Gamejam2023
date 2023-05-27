@@ -40,7 +40,7 @@ public class Spawner : Enemy
         if (health <= 0.0f)
         {
             Death();
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }    
 
@@ -54,6 +54,11 @@ public class Spawner : Enemy
     {
         // Handle the death event of the spawned object
         spawned--;
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
     }
 
 }

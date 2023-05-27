@@ -94,7 +94,7 @@ public class Spawned : Enemy
         // Invoke the event
         OnDeath?.Invoke();
         Death();
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     private void Move()
@@ -126,5 +126,10 @@ public class Spawned : Enemy
         //instantiate projectiles? 
         //fire towards player
         Debug.Log("ATTACK");
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
     }
 }
