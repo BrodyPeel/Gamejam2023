@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 leftStickInput = context.ReadValue<Vector2>();
-        float speed = isBoosting ? boostSpeed : moveSpeed[upgradeLevel - 1];
+        float speed = isBoosting ? moveSpeed[upgradeLevel - 1] + boostSpeed : moveSpeed[upgradeLevel - 1];
         // Check if the right stick is not in use
         if (Gamepad.current != null && Gamepad.current.rightStick.ReadValue().magnitude <= 0f)
         {

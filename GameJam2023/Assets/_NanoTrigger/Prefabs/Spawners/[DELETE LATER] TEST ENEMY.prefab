@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  moveSpeed: 2
+  moveSpeed: 1
   sightRadius: 3
   attackRadius: 2
   rotationSpeed: 2
