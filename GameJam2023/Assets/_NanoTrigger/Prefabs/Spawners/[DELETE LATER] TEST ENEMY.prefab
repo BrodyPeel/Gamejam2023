@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4987963380662373673}
   - component: {fileID: 4767836477808490020}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Germs_0000s_0000s_0001_Layer-23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6653592145344630517}
   - component: {fileID: 1333704035899763189}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Germs_0000s_0000s_0000_Layer-23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 3018134615588223408}
   - component: {fileID: 5210261080130803138}
   - component: {fileID: 4266034495301436190}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: '[DELETE LATER] TEST ENEMY'
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ MonoBehaviour:
   sightRadius: 2
   attackRadius: 1
   rotationSpeed: 4
-  canMove: 0
+  canMove: 1
   damage: 1
 --- !u!50 &3018134615588223408
 Rigidbody2D:
@@ -327,9 +327,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  moveSpeed: 0
-  sightRadius: 0
-  attackRadius: 0
-  rotationSpeed: 0
-  canMove: 0
-  damage: 0
+  moveSpeed: 2
+  sightRadius: 3
+  attackRadius: 2
+  rotationSpeed: 2
+  canMove: 1
+  damage: 1

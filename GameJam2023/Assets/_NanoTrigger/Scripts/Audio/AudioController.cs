@@ -40,7 +40,6 @@ public class AudioController : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -114,8 +113,11 @@ public class AudioController : MonoBehaviour
         if (sfxDictionary.TryGetValue(sfx, out AudioClip clip))
         {
             AudioSource sfxSource = SFXPool.PlaySound(clip, volume, loop);
-            sfxSource.transform.position = sfxPosition;
-            sfxSource.spatialBlend = 1.0f; // Set the spatialBlend to 1 for 3D sound.
+            if (sfxSource != null)
+            {
+                sfxSource.transform.position = sfxPosition;
+                sfxSource.spatialBlend = 1.0f; // Set the spatialBlend to 1 for 3D sound.
+            }
             return sfxSource;
         }
         else
@@ -124,4 +126,5 @@ public class AudioController : MonoBehaviour
             return null;
         }
     }
+
 }

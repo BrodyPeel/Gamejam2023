@@ -21,12 +21,12 @@ public class AudioPool : MonoBehaviour
         }
     }
 
-    public void PlaySound(AudioClip clip, float volume, bool loop)
+    public AudioSource PlaySound(AudioClip clip, float volume, bool loop)
     {
         if (availableSources.Count == 0)
         {
             Debug.LogWarning("No audio sources available in pool.");
-            return;
+            return null;
         }
 
         AudioSource source = availableSources.Dequeue();
@@ -34,10 +34,16 @@ public class AudioPool : MonoBehaviour
         source.clip = clip;
         source.volume = volume;
         source.loop = loop;
-        source.Play();
+        source.PlayOneShot(clip);
 
-        StartCoroutine(ReturnSourceToPool(source, clip.length));
+        if (!loop)
+        {
+            StartCoroutine(ReturnSourceToPool(source, clip.length));
+        }
+
+        return source;
     }
+
 
 
     private IEnumerator ReturnSourceToPool(AudioSource source, float delay)

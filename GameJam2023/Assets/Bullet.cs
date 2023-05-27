@@ -10,8 +10,8 @@ public class Bullet : MonoBehaviour
 
     public float damage;
     public float force;
+
     // Start is called before the first frame update
-    
     void OnEnable()
     {
         RB = this.GetComponent<Rigidbody2D>(); 
@@ -28,11 +28,15 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             // Deal damage to the enemy
+            Debug.Log("Bullet Hit Enemy");
             enemy.TakeDamage(damage);
         }
 
-        // Destroy the bullet
-        DeactivateBullet();
+        if (!collision.gameObject.CompareTag("Player"))
+        {
+            // Destroy the bullet
+            DeactivateBullet();
+        }
     }
 
     private void DeactivateBullet()

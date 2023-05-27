@@ -15,6 +15,7 @@ public class ObjectPool : MonoBehaviour
     public GameObject enemyProjectileTwo;
     public int amountToPool;
     public int amountToPoolEnemy;
+    public Transform pooledObjects;
 
     void Awake()
     {
@@ -31,24 +32,28 @@ public class ObjectPool : MonoBehaviour
         for (int i = 0; i < amountToPool; i++)
         {
             tmp = Instantiate(smallProjectile);
+            tmp.transform.SetParent(pooledObjects);
             tmp.SetActive(false);
             pooledSmallProjectile.Add(tmp);
         }
         for (int i = 0; i < amountToPool; i++)
         {
             tmp = Instantiate(largeProjectile);
+            tmp.transform.SetParent(pooledObjects);
             tmp.SetActive(false);
             pooledLargeProjectile.Add(tmp);
         }
         for (int i = 0; i < amountToPoolEnemy; i++)
         {
             tmp = Instantiate(enemyProjectileOne);
+            tmp.transform.SetParent(pooledObjects);
             tmp.SetActive(false);
             pooledEnemyProjectileOne.Add(tmp);
         }
         for (int i = 0; i < amountToPoolEnemy; i++)
         {
             tmp = Instantiate(enemyProjectileTwo);
+            tmp.transform.SetParent(pooledObjects);
             tmp.SetActive(false);
             pooledEnemyProjectileTwo.Add(tmp);
         }

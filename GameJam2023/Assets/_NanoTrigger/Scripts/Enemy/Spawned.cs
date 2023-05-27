@@ -31,7 +31,6 @@ public class Spawned : Enemy
     void Update()
     {
         Debug.Log(currentState);
-        Debug.Log(playerShipTransform);
         playerShipTransform = PlayerPosition.transform.position;
         enemyPosition = this.transform.position;
 

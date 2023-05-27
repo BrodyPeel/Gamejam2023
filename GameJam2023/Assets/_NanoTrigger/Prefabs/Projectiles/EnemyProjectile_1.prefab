@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 149786777729307605}
   - component: {fileID: 6658963853951463819}
   - component: {fileID: -2588301557969260966}
-  - component: {fileID: 7038802639650533474}
   - component: {fileID: -695396337286667881}
-  m_Layer: 8
-  m_Name: Projectile_1
+  - component: {fileID: -1627345353271520576}
+  m_Layer: 9
+  m_Name: EnemyProjectile_1
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 18d61bbe8db16264f805123ca9855c35, type: 2}
+  - {fileID: 2100000, guid: 749daddcd8cd6f14db017c7d358b4e9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 565157503
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 09554c15ac9dbea40a260953cd863210, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43e0df694f0eb7441875a850543ac918, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,22 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &7038802639650533474
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302116720136135850}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00000014901161, y: 0}
-  m_Size: {x: 0.5560753, y: 1.13}
-  m_Direction: 0
 --- !u!114 &-695396337286667881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +122,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   force: 10
+--- !u!58 &-1627345353271520576
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302116720136135850}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.09
