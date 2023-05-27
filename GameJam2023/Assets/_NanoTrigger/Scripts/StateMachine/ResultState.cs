@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ResultState : IState
 {
+    public string Name => "ResultsState";
+
     public void OnEnter(StateController sc)
     {
         TMPro.TMP_Text text = MenuController.Instance.resultsMenu.resultsText;

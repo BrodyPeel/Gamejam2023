@@ -21,6 +21,7 @@ public abstract class Menu : MonoBehaviour
 
     public void Open()
     {
+        animator.ResetTrigger("Close");
         animator.SetTrigger("Open");
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
@@ -28,6 +29,7 @@ public abstract class Menu : MonoBehaviour
 
     public void Close()
     {
+        animator.ResetTrigger("Open");
         animator.SetTrigger("Close");
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;

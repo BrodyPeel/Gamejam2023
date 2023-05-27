@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 827c4c595b81172408f15c065f1be0cd, type: 2}
+  - {fileID: 2100000, guid: 18d61bbe8db16264f805123ca9855c35, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bf6493a63607f4886da44dc3269cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   force: 10
 --- !u!50 &-2588301557969260966
 Rigidbody2D:
@@ -128,7 +129,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302116720136135850}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

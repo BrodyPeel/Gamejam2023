@@ -157,7 +157,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Navigate"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""a39f6c61-38bb-47c9-93c4-958c44cd2727"",
                     ""expectedControlType"": ""Stick"",
                     ""processors"": """",
@@ -166,7 +166,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Select"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""e9349626-1d6b-40ec-92f5-3cd2f2db13e3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -175,7 +175,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Back"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""9d34468f-510c-4571-8e71-62cefb9793e0"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",

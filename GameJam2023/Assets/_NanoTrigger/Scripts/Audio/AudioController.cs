@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Music { SSLoop, Music2 }
-public enum SFX { Select, Cancel }
+public enum Music { NTLoop, Music2 }
+public enum SFX { Select, Fire1, EnemySpawn1, EnemySpawn2, EnemySpawn3, EnemyDie1, EnemyDie2, EnemyDie3}
 
 public class AudioController : MonoBehaviour
 {
@@ -11,6 +11,9 @@ public class AudioController : MonoBehaviour
 
     public AudioSource musicSource;
     public AudioSource SFXSource;
+
+    public float musicVolume;
+    public float SFXVolume;
 
     [System.Serializable]
     public struct MusicClip
@@ -64,7 +67,7 @@ public class AudioController : MonoBehaviour
 
     public void PlayMusic(Music music)
     {
-        musicSource.volume = 1f;
+        musicSource.volume = musicVolume;
         musicSource.clip = musicDictionary[music];
         musicSource.Play();
     }
@@ -92,13 +95,12 @@ public class AudioController : MonoBehaviour
         }
     }
 
-    public void PlaySFX(SFX sfx, float volume = 1f)
+    public void PlaySFX(SFX sfx)
     {
         if (sfxDictionary.TryGetValue(sfx, out AudioClip clip))
         {
-            SFXSource.volume = volume;
-            SFXSource.clip = clip;
-            SFXSource.Play();
+            SFXSource.volume = SFXVolume;
+            SFXSource.PlayOneShot(clip);
         }
         else
         {

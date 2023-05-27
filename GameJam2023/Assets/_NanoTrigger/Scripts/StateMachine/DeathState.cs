@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DeathState : IState
 {
+    public string Name => "DeathState";
+
     public void OnEnter(StateController sc)
     {
         // "What was that!?"

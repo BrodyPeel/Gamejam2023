@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StateController : MonoBehaviour
 {
+    [SerializeField]
     IState currentState;
     public TitleState titleState = new TitleState();
     public EnterLevelState enterLevelState = new EnterLevelState();
@@ -34,11 +35,21 @@ public class StateController : MonoBehaviour
         }
         currentState = newState;
         currentState.OnEnter(this);
+
+        Debug.Log(currentState);
+    }
+
+    public bool isState(string name)
+    {
+        if (currentState.Name == name) return true;
+        else return false;
     }
 }
 
 public interface IState
 {
+    string Name { get; }
+
     public void OnEnter(StateController controller);
     public void UpdateState(StateController controller);
     public void OnPause(StateController controller);

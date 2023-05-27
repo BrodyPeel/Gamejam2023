@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayState : IState
 {
+    public string Name => "PlayState";
+
     public void OnEnter(StateController sc)
     {
         MenuController.Instance.ShowMenu(1);
+        Time.timeScale = 1f;
     }
     public void UpdateState(StateController sc)
     {

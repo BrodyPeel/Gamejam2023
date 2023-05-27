@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ExitLevelState : IState
 {
+    public string Name => "ExitLevelState";
+
     public void OnEnter(StateController sc)
     {
         // "What was that!?"

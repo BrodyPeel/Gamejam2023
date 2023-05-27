@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
-    private Rigidbody2D rigidbody;
+    new private Rigidbody2D rigidbody;
 
     public GameObject[] guns;
 
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 joystickInput = Vector2.zero;
 
     public int upgradeLevel;
-    private float life;
+    public float life;
 
     // Start is called before the first frame update
     void Start()
@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
                 bullet.transform.position = guns[i].transform.position;
                 bullet.transform.rotation = guns[i].transform.rotation;
                 bullet.SetActive(true);
+                AudioController.Instance.PlaySFX(SFX.Fire1);
             }
         }
     } 

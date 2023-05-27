@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MenuController : MonoBehaviour
 {
@@ -8,8 +9,13 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Menu currentMenu;
 
     public ResultsMenu resultsMenu;
+    public PauseMenu pauseMenu;
 
     public ScreenFader screenFader;
+
+    public EventSystem eventSystem;
+
+    private bool isPaused = false;
 
     private void Awake()
     {
@@ -27,6 +33,15 @@ public class MenuController : MonoBehaviour
     {
         // Initially show only the Title menu
         ShowMenu(0);
+    }
+
+    public void Pause()
+    {
+        if (!isPaused)
+        {
+            GameManager.Instance.state.ChangeState(GameManager.Instance.state.pauseState);
+            isPaused = true;
+        }
     }
 
     public void ShowMenu(int menuIndex)

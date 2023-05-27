@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class TitleState : IState
 {
+    public string Name => "TitleState";
+
     public void OnEnter(StateController sc)
     {
         // "What was that!?"
         MenuController.Instance.screenFader.FadeFromBlack();
         GameManager.Instance.camera.AdjustSizeOverTime(6f, 0f);
+        AudioController.Instance.PlayMusic(Music.NTLoop);
     }
     public void UpdateState(StateController sc)
     {

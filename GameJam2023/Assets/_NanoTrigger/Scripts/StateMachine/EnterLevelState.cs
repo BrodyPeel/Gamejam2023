@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnterLevelState : IState
 {
+    public string Name => "EnterLevelState";
+
     public void OnEnter(StateController sc)
     {
         // "What was that!?"
