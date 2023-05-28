@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
     protected float damage;
 
     public float fadeDuration = 1f;
-    private SpriteRenderer[] sprites;
+    private SpriteRenderer[] spriteRenderers;
     
 
     protected Vector2 enemyPosition;
@@ -46,8 +46,8 @@ public class Enemy : MonoBehaviour
     {
         currentState = EnemyState.Idle;
         GameManager.Instance.levelManager.currentLevel.clearCount += 1;
-        sprites = GetComponentsInChildren<SpriteRenderer>();
-        foreach(SpriteRenderer sr in sprites)
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        foreach(SpriteRenderer sr in spriteRenderers)
         {
             sr.material.SetFloat("_FullAlphaDissolveFade", 1f);
         }
@@ -118,21 +118,29 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator FadeTo(float targetAlpha)
     {
-        foreach (SpriteRenderer sr in sprites)
-        {
-            float startAlpha = sr.material.GetFloat("_FullGlowDissolveFade");
-            float elapsedTime = 0f;
+        Dictionary<SpriteRenderer, float> startAlphas = new Dictionary<SpriteRenderer, float>();
 
-            while (elapsedTime < fadeDuration)
+        foreach (SpriteRenderer sr in spriteRenderers)
+        {
+            startAlphas.Add(sr, sr.material.GetFloat("_FullGlowDissolveFade"));
+        }
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            foreach (SpriteRenderer sr in spriteRenderers)
             {
-                elapsedTime += Time.deltaTime;
-                float alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / fadeDuration);
+                float alpha = Mathf.Lerp(startAlphas[sr], targetAlpha, elapsedTime / fadeDuration);
                 sr.material.SetFloat("_FullGlowDissolveFade", alpha);
-                yield return null;
             }
+
+            yield return null;
         }
 
         Destroy(this.gameObject);
-        yield return null;
     }
+
 }

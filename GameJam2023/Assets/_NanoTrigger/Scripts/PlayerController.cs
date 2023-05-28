@@ -21,14 +21,34 @@ public class PlayerController : MonoBehaviour
     private float nextFireTime = 0f;
     private Vector2 joystickInput = Vector2.zero;
 
+    private int initialUpgradeLevel; // Store initial upgrade level here.
     public int upgradeLevel;
+    public float maxLife;
     public float life;
+
+    public float LifePercentage
+    {
+        get
+        {
+            // Compute percentage of life remaining including resets.
+            float totalLife = (life + ((upgradeLevel - 1) * 3)); // Total life left considering resets
+            return (totalLife / maxLife) * 100;
+        }
+    }
+
+    public SpriteRenderer[] spriteRenderers;
+    public float flashDuration = 0.3f;
+    public float fadeDuration = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = this.GetComponent<Rigidbody2D>();       
-        
+        rigidbody = this.GetComponent<Rigidbody2D>();
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+
+        initialUpgradeLevel = upgradeLevel; // Store initial upgrade level.
+        maxLife = initialUpgradeLevel * 3; // Calculate max life here.
+        life = 3;
     }
 
     // Update is called once per frame
@@ -189,16 +209,79 @@ public class PlayerController : MonoBehaviour
         {
             life = 0;
         }
+
+        if (Damage > 0) // If the player takes damage, start the flash.
+        {
+            StartCoroutine(FlashPlayer());
+        }
     }
+
+    private IEnumerator FlashPlayer()
+    {
+        float startTime = Time.time; // Save the start time.
+
+        while (Time.time < startTime + flashDuration)
+        {
+            // The 2nd parameter to PingPong determines how fast it oscillates
+            // We divide flashDuration by 2 so that it goes from 0 to 1 and back to 0 over the course of flashDuration
+            float pingPongValue = Mathf.PingPong((Time.time - startTime) / (flashDuration / 2), 1);
+
+            foreach (SpriteRenderer sr in spriteRenderers)
+            {
+                sr.material.SetFloat("_AddColorFade", pingPongValue);
+            }
+
+            yield return null; // Yield to the next frame.
+        }
+
+        // Ensure all sprites return to their original state after the loop
+        foreach (SpriteRenderer sr in spriteRenderers)
+        {
+            sr.material.SetFloat("_AddColorFade", 0);
+        }
+    }
+
 
     public void Death()
     {
         //death animation
         //results screen
-        Destroy(this.gameObject);
-    }   
+        Die();
+        //Destroy(this.gameObject);
+    }
 
+    public void Die()
+    {
+        StartCoroutine(_Die(0f));
+    }
+
+    private IEnumerator _Die(float targetAlpha)
+    {
+        Dictionary<SpriteRenderer, float> startAlphas = new Dictionary<SpriteRenderer, float>();
+
+        foreach (SpriteRenderer sr in spriteRenderers)
+        {
+            startAlphas.Add(sr, sr.material.GetFloat("_FullGlowDissolveFade"));
+        }
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            foreach (SpriteRenderer sr in spriteRenderers)
+            {
+                float alpha = Mathf.Lerp(startAlphas[sr], targetAlpha, elapsedTime / fadeDuration);
+                sr.material.SetFloat("_FullGlowDissolveFade", alpha);
+            }
+
+            yield return null;
+        }
+
+        GameManager.Instance.state.ChangeState(GameManager.Instance.state.deathState);
+    }
 }
-    
-    
+
+
 

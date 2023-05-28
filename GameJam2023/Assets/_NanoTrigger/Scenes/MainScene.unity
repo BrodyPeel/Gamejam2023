@@ -484,9 +484,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 48991202}
   animator: {fileID: 48991201}
-  resultsText: {fileID: 0}
-  playtimeText: {fileID: 0}
-  scoreText: {fileID: 0}
+  resultsText: {fileID: 1373607673}
+  playtimeText: {fileID: 1934327137}
+  scoreText: {fileID: 1205834734}
+  nextButton: {fileID: 702773486}
 --- !u!222 &48991204
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -808,11 +809,11 @@ MonoBehaviour:
   - sfx: 1
     clip: {fileID: 8300000, guid: 9bf2a1198698f6842aa0818182620050, type: 3}
   - sfx: 2
-    clip: {fileID: 8300000, guid: 32dba2edfb38d3f409347baa9d6065dd, type: 3}
+    clip: {fileID: 8300000, guid: 1938b6a46a0779744962b3a439ea2d3d, type: 3}
   - sfx: 3
-    clip: {fileID: 8300000, guid: 258183060e439d447ad50afe5154ca86, type: 3}
+    clip: {fileID: 8300000, guid: 0b3e0ca1cf854674e87571d080541382, type: 3}
   - sfx: 4
-    clip: {fileID: 8300000, guid: 8afeee0576498b045a40427608f7ce48, type: 3}
+    clip: {fileID: 8300000, guid: 28be9722b15568c47b2e61893b04d1f9, type: 3}
 --- !u!114 &399059334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1483,7 +1484,11 @@ MonoBehaviour:
   rotationSpeed: 5
   rotationThreshold: 0.2
   upgradeLevel: 4
+  maxLife: 10
   life: 10
+  spriteRenderers: []
+  flashDuration: 0.5
+  fadeDuration: 1
 --- !u!50 &588859968
 Rigidbody2D:
   serializedVersion: 4
@@ -1666,7 +1671,7 @@ GameObject:
   - component: {fileID: 702773489}
   - component: {fileID: 702773488}
   m_Layer: 5
-  m_Name: StartButton
+  m_Name: NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1737,9 +1742,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TitleMenu, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 48991203}
+        m_TargetAssemblyTypeName: ResultsMenu, Assembly-CSharp
+        m_MethodName: NextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3499,8 +3504,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312584570}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4511.854, y: 1539.2267, z: -5.426732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4440,7 +4445,7 @@ GameObject:
   - component: {fileID: 1766309959}
   - component: {fileID: 1766309958}
   m_Layer: 5
-  m_Name: HealthText
+  m_Name: StatusText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4461,10 +4466,10 @@ RectTransform:
   m_Father: {fileID: 1561223191}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.03, y: 0.88}
+  m_AnchorMax: {x: 0.3, y: 0.97}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766309958
 MonoBehaviour:
@@ -4488,15 +4493,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Status: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1fefe1d9f9f9e6f40822d9c980060eac, type: 2}
+  m_sharedMaterial: {fileID: 6476668972699434550, guid: 1fefe1d9f9f9e6f40822d9c980060eac, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294625437
+  m_fontColor: {r: 0.61459595, g: 0.7835883, b: 0.9811321, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4513,10 +4518,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -5153,6 +5158,7 @@ MonoBehaviour:
   - {fileID: 1284570968908588070, guid: dc8824dce5e4d0c428c8560ab9ad82f8, type: 3}
   - {fileID: 206584026855393007, guid: df0c59b0f107aa4448c84489b2c46a4c, type: 3}
   - {fileID: 1353401301157086254, guid: 6c85867da61546b4c8d6c1586c6cad1c, type: 3}
+  - {fileID: 4014751593673558981, guid: 1a7e4e7f5607b7745baf4d980ab282b7, type: 3}
 --- !u!4 &2021542703
 Transform:
   m_ObjectHideFlags: 0
@@ -5350,6 +5356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 2121897792}
   animator: {fileID: 2121897791}
+  statusText: {fileID: 1766309958}
 --- !u!1 &2134223860
 GameObject:
   m_ObjectHideFlags: 0

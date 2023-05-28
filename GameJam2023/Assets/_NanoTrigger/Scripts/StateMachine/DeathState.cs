@@ -9,6 +9,9 @@ public class DeathState : IState
     public void OnEnter(StateController sc)
     {
         // "What was that!?"
+        MenuController.Instance.screenFader.FadeToBlack();
+        MenuController.Instance.ShowMenu(MenuController.Instance.resultsMenu);
+        MenuController.Instance.eventSystem.SetSelectedGameObject(MenuController.Instance.resultsMenu.nextButton);
     }
     public void UpdateState(StateController sc)
     {
