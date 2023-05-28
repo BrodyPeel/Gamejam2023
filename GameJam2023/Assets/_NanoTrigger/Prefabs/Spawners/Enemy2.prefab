@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 5210261080130803138}
   - component: {fileID: 4266034495301436190}
   m_Layer: 10
-  m_Name: '[DELETE LATER] TEST ENEMY'
+  m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

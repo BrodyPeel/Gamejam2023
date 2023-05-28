@@ -36,9 +36,10 @@ public class Enemy : MonoBehaviour
     protected Vector2 playerShipTransform;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
-        currentState = EnemyState.Idle;       
+        currentState = EnemyState.Idle;
+        GameManager.Instance.levelManager.currentLevel.clearCount += 1;
     }
 
     // Update is called once per frame
@@ -74,11 +75,13 @@ public class Enemy : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         //animation for damage?
+        AudioController.Instance.PlaySFX(SFX.EnemySpawn1);
         health -= damage;
     }
 
     public void Death()
     {
+        GameManager.Instance.levelManager.currentLevel.cleared += 1;
         OnEnemyDeath?.Invoke(false);
     }
 
