@@ -10,7 +10,9 @@ Material:
   m_Name: ShipMat
   m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
   m_ValidKeywords:
+  - _ENABLEADDCOLOR_ON
   - _ENABLEFROZEN_ON
+  - _ENABLEFULLGLOWDISSOLVE_ON
   - _ENABLESHINE_ON
   - _SHADERSPACE_UV
   - _TIMESETTINGS_LINEAR_DEFAULT
@@ -97,7 +99,7 @@ Material:
     m_Floats:
     - PixelSnap: 0
     - _AddColorContrast: 0.5
-    - _AddColorFade: 1
+    - _AddColorFade: 0
     - _AddHueBrightness: 2
     - _AddHueContrast: 1
     - _AddHueFade: 1
@@ -151,7 +153,7 @@ Material:
     - _DirectionalGlowFadeNoiseFactor: 0.2
     - _DirectionalGlowFadeRotation: 0
     - _DirectionalGlowFadeWidth: 0.1
-    - _EnableAddColor: 0
+    - _EnableAddColor: 1
     - _EnableAddHue: 0
     - _EnableAlphaTint: 0
     - _EnableBlackTint: 0
@@ -170,7 +172,7 @@ Material:
     - _EnableFrozen: 1
     - _EnableFullAlphaDissolve: 0
     - _EnableFullDistortion: 0
-    - _EnableFullGlowDissolve: 0
+    - _EnableFullGlowDissolve: 1
     - _EnableGlitch: 0
     - _EnableHalftone: 0
     - _EnableHologram: 0
@@ -217,7 +219,7 @@ Material:
     - _FullAlphaDissolveWidth: 0.5
     - _FullDistortionFade: 1
     - _FullFade: 1
-    - _FullGlowDissolveFade: 0.5
+    - _FullGlowDissolveFade: 1
     - _FullGlowDissolveWidth: 0.5
     - _GlitchBrightness: 4
     - _GlitchFade: 1

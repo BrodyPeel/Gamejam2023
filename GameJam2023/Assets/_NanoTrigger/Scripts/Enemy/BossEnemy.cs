@@ -11,8 +11,10 @@ public class BossEnemy : Enemy
     public float intervalModifer;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
+
         currentState = EnemyState.Idle;
 
         rb = this.GetComponent<Rigidbody2D>();
@@ -25,8 +27,12 @@ public class BossEnemy : Enemy
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
+        base.Update();
+
+        if (dead) return;
+
         playerShipTransform = PlayerPosition.transform.position;
         enemyPosition = this.transform.position;
 
@@ -64,7 +70,8 @@ public class BossEnemy : Enemy
 
     public void Projectile(int Sequence)
     {
-        
+        Debug.Log("Boss Firing");
+
         if (Sequence == 1) //fires bullets 6 bullets in a spread
         {
             float spreadAngle = 30f;

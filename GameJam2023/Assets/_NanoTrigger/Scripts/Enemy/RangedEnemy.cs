@@ -7,8 +7,10 @@ public class RangedEnemy : Enemy
     Rigidbody2D rb;
     public bool projectileType = false;
 
-    void Start()
+    public override void Start()
     {
+        base.Start();
+
         health = 15.0f;
         moveSpeed = 2.0f;
         sightRadius = 10.0f;
@@ -25,8 +27,12 @@ public class RangedEnemy : Enemy
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
+        base.Update();
+
+        if (dead) return;
+
         playerShipTransform = PlayerPosition.transform.position;
         enemyPosition = this.transform.position;
 
