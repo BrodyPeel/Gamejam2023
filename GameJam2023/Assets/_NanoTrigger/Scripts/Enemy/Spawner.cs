@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Spawner : Enemy
 {
-
-    public GameObject Spawn;
+    public GameObject spawnPrefab;
     public int spawnMax;
     public float spawnInterval;
+    public Transform spawnPosition;
 
     private float nextSpawn;
     private int spawned;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-        health = 10.0f;
+        base.Start();
         moveSpeed = 0.0f;
+        nextSpawn = Time.time + spawnInterval;
 
     }
 
@@ -25,12 +26,13 @@ public class Spawner : Enemy
     {
         if (GameManager.Instance.state.isState("PlayState"))
         {
-            if (Spawn != null)
+            if (spawnPrefab != null)
             {
                 if (spawned < spawnMax && Time.time >= nextSpawn)
                 {
                     //TODO update spawn position?
                     SpawnObject();
+                    nextSpawn = Time.time + spawnInterval;
 
                 }
             }
@@ -42,15 +44,16 @@ public class Spawner : Enemy
             if (health <= 0.0f)
             {
                 Death();
-                Destroy(this.gameObject);
+                gameObject.SetActive(false);
             }
         }
     }    
 
     public void SpawnObject()
     {
-        GameObject spawnedObject = Instantiate(Spawn, transform.position, transform.rotation);
+        GameObject spawnedObject = Instantiate(spawnPrefab, spawnPosition.position, spawnPosition.rotation);
         spawnedObject.GetComponent<Spawned>().OnDeath += HandleSpawnedDeath;
+        AudioController.Instance.PlaySFX(SFX.EnemySpawn2);
         spawned++;        
     }
     private void HandleSpawnedDeath()
@@ -62,6 +65,7 @@ public class Spawner : Enemy
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
+        AudioController.Instance.PlaySFX(SFX.EnemySpawn1);
     }
 
 }

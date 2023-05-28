@@ -21,7 +21,7 @@ public class AudioPool : MonoBehaviour
         }
     }
 
-    public AudioSource PlaySound(AudioClip clip, float volume, bool loop)
+    public AudioSource PlaySound(AudioClip clip, float volume, bool loop, Transform parentTransform)
     {
         if (availableSources.Count == 0)
         {
@@ -30,33 +30,34 @@ public class AudioPool : MonoBehaviour
         }
 
         AudioSource source = availableSources.Dequeue();
+        source.transform.parent = parentTransform;
         source.gameObject.SetActive(true);
         source.clip = clip;
         source.volume = volume;
         source.loop = loop;
-        source.PlayOneShot(clip);
+        source.Play();
 
         if (!loop)
         {
-            StartCoroutine(ReturnSourceToPool(source, clip.length));
+            StartCoroutine(ReturnSourceToPool(source, source.clip.length));
         }
 
         return source;
     }
 
-
-
     private IEnumerator ReturnSourceToPool(AudioSource source, float delay)
     {
+        Debug.Log($"Source will be returned to pool in {delay} seconds. Currently looping: {source.loop}.");
         yield return new WaitForSeconds(delay);
-
-        if (!source.loop)
-        {
-            source.gameObject.SetActive(false);
-            source.clip = null;
-
-            availableSources.Enqueue(source);
-        }
+        Debug.Log("Returning source to pool...");
+        source.loop = false;
+        source.Stop();
+        source.gameObject.SetActive(false);
+        source.clip = null;
+        source.transform.parent = this.transform;
+        availableSources.Enqueue(source);
     }
+
+
 
 }

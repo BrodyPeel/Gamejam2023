@@ -5,13 +5,9 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {
     [SerializeField]
-    private int clearCount;
+    public int clearCount;
 
-    public int ClearCount
-    {
-        get { return clearCount; }
-        private set { clearCount = value; }
-    }
+    public int cleared = 0;
 
     [SerializeField]
     private int depth;
@@ -25,12 +21,43 @@ public class Level : MonoBehaviour
     [SerializeField]
     private GameObject playerShip;
     [SerializeField]
-    private GameObject shipContainer;  // The container for the ship during the animation
+    private GameObject shipContainer;  // The container for the ship during the opening animation
+    [SerializeField]
+    private GameObject shipExitContainer;  // The container for the ship during the exit animation
+    [SerializeField]
+    private GameObject cameraContainer;  // The container for the camera during the door animation
     [SerializeField]
     private Animator animator;
 
     private string openingAnimation = "EnterLevel";
+    private string doorAnimation = "DoorAnimation";
+    private string exitAnimation = "ExitLevel";
 
+    public Transform exitPosition;
+
+
+    private bool levelStarted = false;
+    private bool doorOpened = false;
+
+    public ExitTrigger exitTrigger;
+
+    private void Awake()
+    {
+        exitTrigger.level = this;
+    }
+
+    private void Update()
+    {
+        if (levelStarted)
+        {
+            if(cleared >= clearCount)
+            {
+                // Open Door
+                Debug.Log("Level Complete");
+                StartDoorAnimation();
+            }
+        }
+    }
 
     public void StartLevelAnimation()
     {
@@ -48,7 +75,7 @@ public class Level : MonoBehaviour
         animator.Play(openingAnimation);
     }
 
-    public void AnimationFinished()
+    public void EnterAnimationFinished()
     {
         // Unparent the ship
         playerShip.transform.SetParent(null);
@@ -61,5 +88,62 @@ public class Level : MonoBehaviour
 
         GameManager.Instance.state.ChangeState(GameManager.Instance.state.playState);
 
+        levelStarted = true;
+    }
+
+    public void StartDoorAnimation()
+    {
+        if (doorOpened) return;
+        doorOpened = true;
+        playerShip = GameManager.Instance.ship;
+
+        // Parent the ship to the container
+        GameManager.Instance.camera.target = cameraContainer.transform;
+
+        // Start the animation
+        animator.Play(doorAnimation);
+    }
+
+    public void DoorAnimationFinished()
+    {
+        GameManager.Instance.camera.target = GameManager.Instance.ship.transform;
+    }
+
+    public void StartExitAnimation()
+    {
+        // Set ship rigidbody to Kinematic
+        playerShip.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+
+        // Parent the ship to the container
+        GameManager.Instance.camera.target = cameraContainer.transform;
+
+        ShipExit();
+    }
+
+    private IEnumerator ShipExit()
+    {
+        while (true)
+        {
+            // Calculate the rotation we need to target
+            Quaternion targetRotation = Quaternion.LookRotation(playerShip.transform.position - exitPosition.position);
+
+            // Slerp towards the target rotation smoothly
+            playerShip.transform.rotation = Quaternion.Slerp(playerShip.transform.rotation, targetRotation, 0.1f * Time.deltaTime);
+            // Check if the object has reached the target
+
+            if (Vector3.Distance(playerShip.transform.position, exitPosition.position) <= 0.1f)
+            {
+                break;
+            }
+
+            // Return control to Unity and wait until the next frame to continue execution
+            yield return null;
+        }
+    }
+
+    public void ExitAnimationFinished()
+    {
+        // Set ship rigidbody to Dynamic
+        playerShip.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
     }
 }

@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 149786777729307605}
+  - component: {fileID: -695396337286667881}
   - component: {fileID: 6658963853951463819}
   - component: {fileID: -2588301557969260966}
   - component: {fileID: 7038802639650533474}
-  - component: {fileID: -695396337286667881}
   m_Layer: 8
   m_Name: Projectile_1
   m_TagString: PlayerProjectile
@@ -35,6 +35,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-695396337286667881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302116720136135850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51bf6493a63607f4886da44dc3269cc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  force: 10
 --- !u!212 &6658963853951463819
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -124,17 +138,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0.00000014901161, y: 0}
   m_Size: {x: 0.5560753, y: 1.13}
   m_Direction: 0
---- !u!114 &-695396337286667881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302116720136135850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51bf6493a63607f4886da44dc3269cc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
-  force: 10
