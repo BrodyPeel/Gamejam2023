@@ -10,8 +10,10 @@ public class Spawned : Enemy
     
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
+
         health = 15.0f;
         moveSpeed = 2.0f;
         sightRadius = 10.0f;

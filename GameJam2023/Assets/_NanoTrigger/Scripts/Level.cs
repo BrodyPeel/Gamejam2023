@@ -111,6 +111,7 @@ public class Level : MonoBehaviour
 
     public void StartExitAnimation()
     {
+        MenuController.Instance.screenFader.FadeToBlack();
         // Set ship rigidbody to Kinematic
         playerShip.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 
@@ -133,6 +134,8 @@ public class Level : MonoBehaviour
 
             if (Vector3.Distance(playerShip.transform.position, exitPosition.position) <= 0.1f)
             {
+                MenuController.Instance.screenFader.FadeToBlack();
+                GameManager.Instance.levelManager.CompleteLevel();
                 break;
             }
 
@@ -143,6 +146,9 @@ public class Level : MonoBehaviour
 
     public void ExitAnimationFinished()
     {
+
+        MenuController.Instance.screenFader.FadeFromBlack();
+
         // Set ship rigidbody to Dynamic
         playerShip.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
     }

@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1449530861125509781}
+  - component: {fileID: 3058154208451198668}
   - component: {fileID: 2095687645252161915}
-  m_Layer: 0
+  - component: {fileID: -3341655958550339670}
+  m_Layer: 6
   m_Name: Infection_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +34,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3058154208451198668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967966551239289685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf5e8a6e780fee4181d1690f415fa33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  moveSpeed: 0
+  sightRadius: 0
+  attackRadius: 0
+  rotationSpeed: 0
+  canMove: 0
+  damage: 1
+  fadeDuration: 2
 --- !u!212 &2095687645252161915
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -84,3 +106,111 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &-3341655958550339670
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967966551239289685}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.48, y: 2.31}
+    newSize: {x: 3.16, y: 3.7}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.74, y: -0.445}
+      - {x: 0.74, y: -0.065}
+      - {x: 0.58, y: 0.285}
+      - {x: 0.57, y: 0.525}
+      - {x: 0.52, y: 0.66499996}
+      - {x: 0.39, y: 0.935}
+      - {x: 0.17999999, y: 1.135}
+      - {x: 0.14999999, y: 1.155}
+      - {x: -0.29, y: 1.155}
+      - {x: -0.47, y: 1.045}
+      - {x: -0.55, y: 0.955}
+      - {x: -0.66999996, y: 0.72499996}
+      - {x: -0.74, y: 0.505}
+      - {x: -0.74, y: 0.195}
+      - {x: -0.69, y: 0.024999999}
+      - {x: -0.65999997, y: -0.024999999}
+      - {x: -0.37, y: -0.305}
+      - {x: -0.26, y: -0.585}
+      - {x: -0.24, y: -0.715}
+      - {x: -0.19, y: -0.835}
+      - {x: -0.12, y: -0.98499995}
+      - {x: 0.03, y: -1.115}
+      - {x: 0.12, y: -1.155}
+      - {x: 0.45, y: -1.155}
+      - {x: 0.57, y: -1.055}
+      - {x: 0.68, y: -0.805}
+      - {x: 0.71999997, y: -0.59499997}
+    - - {x: 0.32, y: -0.645}
+      - {x: 0.32, y: -0.565}
+      - {x: 0.39, y: -0.435}
+      - {x: 0.42, y: -0.405}
+      - {x: 0.45, y: -0.33499998}
+      - {x: 0.45999998, y: -0.305}
+      - {x: 0.45999998, y: -0.16499999}
+      - {x: 0.47, y: -0.145}
+      - {x: 0.48, y: -0.155}
+      - {x: 0.5, y: -0.21499999}
+      - {x: 0.48999998, y: -0.225}
+      - {x: 0.48, y: -0.265}
+      - {x: 0.48, y: -0.305}
+      - {x: 0.47, y: -0.315}
+      - {x: 0.47, y: -0.33499998}
+      - {x: 0.44, y: -0.385}
+      - {x: 0.42, y: -0.415}
+      - {x: 0.39, y: -0.465}
+      - {x: 0.39, y: -0.515}
+      - {x: 0.38, y: -0.525}
+      - {x: 0.38, y: -0.555}
+      - {x: 0.32, y: -0.655}
+      - {x: 0.32999998, y: -0.655}
+    - - {x: 0.17, y: -0.105}
+      - {x: 0.19, y: -0.015}
+      - {x: 0.17999999, y: -0.015}
+      - {x: 0.13, y: -0.114999995}
+      - {x: 0.14, y: -0.145}
+    - - {x: -0.16, y: 0.21499999}
+      - {x: -0.17999999, y: 0.24499999}
+      - {x: -0.26, y: 0.33499998}
+      - {x: -0.31, y: 0.355}
+      - {x: -0.35999998, y: 0.385}
+      - {x: -0.35999998, y: 0.405}
+      - {x: -0.37, y: 0.415}
+      - {x: -0.37, y: 0.525}
+      - {x: -0.35999998, y: 0.53499997}
+      - {x: -0.35, y: 0.60499996}
+      - {x: -0.29999998, y: 0.695}
+      - {x: -0.26999998, y: 0.73499995}
+      - {x: -0.26, y: 0.775}
+      - {x: -0.24, y: 0.79499996}
+      - {x: -0.19, y: 0.79499996}
+      - {x: -0.17999999, y: 0.78499997}
+      - {x: -0.16, y: 0.78499997}
+      - {x: -0.13, y: 0.745}
+      - {x: -0.12, y: 0.705}
+      - {x: -0.11, y: 0.695}
+      - {x: -0.11, y: 0.645}
+      - {x: -0.099999994, y: 0.635}
+      - {x: -0.099999994, y: 0.545}
+      - {x: -0.049999997, y: 0.445}
+      - {x: -0.049999997, y: 0.295}
+      - {x: -0.089999996, y: 0.225}
+      - {x: -0.11, y: 0.205}
+      - {x: -0.14, y: 0.21499999}

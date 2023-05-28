@@ -120,6 +120,7 @@ public class LevelManager : MonoBehaviour
             // Instantiate the new level
             GameObject newLevelPrefab = levelToPrefab[newLevel];
             Instantiate(newLevelPrefab, Vector3.zero, Quaternion.identity);
+            currentLevel = newLevelPrefab.GetComponent<Level>();
         }
         else
         {

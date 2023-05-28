@@ -180,7 +180,6 @@ GameObject:
   - component: {fileID: -3742950180129312475}
   - component: {fileID: 3018134615588223408}
   - component: {fileID: 5210261080130803138}
-  - component: {fileID: 4266034495301436190}
   m_Layer: 10
   m_Name: Enemy1
   m_TagString: Enemy
@@ -224,6 +223,7 @@ MonoBehaviour:
   rotationSpeed: 4
   canMove: 1
   damage: 1
+  fadeDuration: 3
 --- !u!50 &3018134615588223408
 Rigidbody2D:
   serializedVersion: 4
@@ -261,22 +261,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.92499995
---- !u!114 &4266034495301436190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9182174685202025841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf5e8a6e780fee4181d1690f415fa33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
-  moveSpeed: 1
-  sightRadius: 3
-  attackRadius: 2
-  rotationSpeed: 2
-  canMove: 1
-  damage: 1

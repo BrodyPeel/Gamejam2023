@@ -44,7 +44,6 @@ public class Spawner : Enemy
             if (health <= 0.0f)
             {
                 Death();
-                gameObject.SetActive(false);
             }
         }
     }    

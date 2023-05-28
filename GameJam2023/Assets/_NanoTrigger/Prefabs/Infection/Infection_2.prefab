@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 258777208805071426}
   - component: {fileID: 8203374190921667337}
   - component: {fileID: 4086028179257653412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4821,8 +4821,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8375160112485521661}
+  - component: {fileID: -297332982379519886}
   - component: {fileID: 8375160112485521662}
-  m_Layer: 0
+  - component: {fileID: -5755455410819124984}
+  m_Layer: 6
   m_Name: Infection_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4845,6 +4847,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -124.818}
+--- !u!114 &-297332982379519886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375160112485521663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf5e8a6e780fee4181d1690f415fa33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
+  moveSpeed: 0
+  sightRadius: 0
+  attackRadius: 0
+  rotationSpeed: 0
+  canMove: 0
+  damage: 1
+  fadeDuration: 2
 --- !u!212 &8375160112485521662
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4897,3 +4919,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &-5755455410819124984
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375160112485521663}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.97, y: 1.38}
+    newSize: {x: 0.97, y: 1.38}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.48499998, y: 0.13}
+      - {x: 0.39499998, y: 0.29}
+      - {x: 0.205, y: 0.53999996}
+      - {x: 0.074999996, y: 0.57}
+      - {x: -0.024999999, y: 0.64}
+      - {x: -0.125, y: 0.69}
+      - {x: -0.475, y: 0.69}
+      - {x: -0.48499998, y: 0.68}
+      - {x: -0.48499998, y: 0.34}
+      - {x: -0.275, y: 0.13}
+      - {x: -0.235, y: -0.12}
+      - {x: -0.24499999, y: -0.35999998}
+      - {x: -0.225, y: -0.48}
+      - {x: -0.145, y: -0.59}
+      - {x: -0.095, y: -0.65999997}
+      - {x: -0.055, y: -0.69}
+      - {x: 0.235, y: -0.69}
+      - {x: 0.375, y: -0.58}
+      - {x: 0.405, y: -0.47}
+      - {x: 0.48499998, y: -0.25}
