@@ -10,6 +10,7 @@ public class EnterLevelState : IState
     {
         // "What was that!?"
         GameManager.Instance.levelManager.currentLevel.StartLevelAnimation();
+        MenuController.Instance.screenFader.FadeFromBlack();
     }
     public void UpdateState(StateController sc)
     {

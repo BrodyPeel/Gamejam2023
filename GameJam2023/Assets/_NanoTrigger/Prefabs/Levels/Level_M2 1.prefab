@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 2739870690603393885}
   - component: {fileID: 6718281520548585720}
   m_Layer: 0
-  m_Name: Level_M2
+  m_Name: Level_M2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clearCount: 0
   cleared: 0
-  depth: 1
+  depth: 2
   playerShip: {fileID: 0}
   shipContainer: {fileID: 1023578372372193013}
   shipExitContainer: {fileID: 1443355525797654070}

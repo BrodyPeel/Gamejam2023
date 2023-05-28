@@ -39,6 +39,8 @@ public class Enemy : MonoBehaviour
     protected Transform PlayerPosition;
     protected Vector2 playerShipTransform;
 
+    protected bool dead = false;
+
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -52,9 +54,10 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
-       
+        if (dead) return;
+
         switch (currentState)
         {
             case EnemyState.Idle:
@@ -75,8 +78,8 @@ public class Enemy : MonoBehaviour
 
         if(health <= 0)
         {
+            dead = true;
             Death();
-            Destroy(this.gameObject);
         }
 
     }
@@ -128,5 +131,8 @@ public class Enemy : MonoBehaviour
                 yield return null;
             }
         }
+
+        Destroy(this.gameObject);
+        yield return null;
     }
 }

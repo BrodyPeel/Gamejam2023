@@ -30,8 +30,12 @@ public class Spawned : Enemy
     }
 
     // Update is called once per frame
-    void Update()
-    {        
+    public override void Update()
+    {
+        base.Update();
+
+        if (dead) return;
+
         playerShipTransform = PlayerPosition.transform.position;
         enemyPosition = this.transform.position;
 
@@ -64,10 +68,6 @@ public class Spawned : Enemy
                 }
                 Attack();
             }
-            else if (currentState == EnemyState.Death)
-            {
-                HandleDeath();
-            }
 
             //check to see where player is. Change state accordingly
             if (Vector2.Distance(playerShipTransform, enemyPosition) <= sightRadius &&
@@ -82,10 +82,6 @@ public class Spawned : Enemy
             else if (Vector2.Distance(playerShipTransform, enemyPosition) > sightRadius)
             {
                 currentState = EnemyState.Idle;
-            }
-            else if (health <= 0.0f)
-            {
-                currentState = EnemyState.Death;
             }
         }
     }

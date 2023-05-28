@@ -394,7 +394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8013307768705484635}
-  - component: {fileID: 3350103107822228465}
+  - component: {fileID: 217009255949754716}
   - component: {fileID: 8013307768705484634}
   - component: {fileID: 8013307768705484629}
   - component: {fileID: 8013307768705484628}
@@ -423,7 +423,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3350103107822228465
+--- !u!114 &217009255949754716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -432,17 +432,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8013307768705484631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf5e8a6e780fee4181d1690f415fa33, type: 3}
+  m_Script: {fileID: 11500000, guid: 5acaccaba0c76db4bbdd8a3f2c87e67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 50
   moveSpeed: 0
   sightRadius: 0
   attackRadius: 0
   rotationSpeed: 0
   canMove: 0
   damage: 1
-  fadeDuration: 2
+  fadeDuration: 1
 --- !u!212 &8013307768705484634
 SpriteRenderer:
   m_ObjectHideFlags: 0

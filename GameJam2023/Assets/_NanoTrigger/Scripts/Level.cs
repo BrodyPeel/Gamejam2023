@@ -63,6 +63,9 @@ public class Level : MonoBehaviour
     {
         playerShip = GameManager.Instance.ship;
 
+        // Unparent the ship
+        playerShip.transform.SetParent(GameManager.Instance.gameObject.transform);
+
         // Set ship rigidbody to Kinematic
         playerShip.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 
@@ -78,7 +81,7 @@ public class Level : MonoBehaviour
     public void EnterAnimationFinished()
     {
         // Unparent the ship
-        playerShip.transform.SetParent(null);
+        playerShip.transform.SetParent(GameManager.Instance.gameObject.transform);
 
         // Set ship rigidbody to Dynamic
         playerShip.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
@@ -111,31 +114,39 @@ public class Level : MonoBehaviour
 
     public void StartExitAnimation()
     {
-        MenuController.Instance.screenFader.FadeToBlack();
         // Set ship rigidbody to Kinematic
         playerShip.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        playerShip.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        playerShip.GetComponent<Rigidbody2D>().angularVelocity = 0f;
 
         // Parent the ship to the container
         GameManager.Instance.camera.target = cameraContainer.transform;
 
-        ShipExit();
+        GameManager.Instance.state.ChangeState(GameManager.Instance.state.exitLevelState);
+
+        StartCoroutine(ShipExit());
     }
 
     private IEnumerator ShipExit()
     {
+        MenuController.Instance.screenFader.FadeToBlack();
+
         while (true)
         {
-            // Calculate the rotation we need to target
-            Quaternion targetRotation = Quaternion.LookRotation(playerShip.transform.position - exitPosition.position);
+            // Move towards the target position smoothly
+            playerShip.transform.position = Vector2.MoveTowards(playerShip.transform.position, exitPosition.position, 2f * Time.deltaTime);
 
-            // Slerp towards the target rotation smoothly
-            playerShip.transform.rotation = Quaternion.Slerp(playerShip.transform.rotation, targetRotation, 0.1f * Time.deltaTime);
             // Check if the object has reached the target
 
             if (Vector3.Distance(playerShip.transform.position, exitPosition.position) <= 0.1f)
             {
-                MenuController.Instance.screenFader.FadeToBlack();
+                Debug.Log("Exit Animation");
+                animator.Play(exitAnimation);
+
+
                 GameManager.Instance.levelManager.CompleteLevel();
+                GameManager.Instance.camera.target = GameManager.Instance.ship.transform;
+                Destroy(this.gameObject);
                 break;
             }
 
@@ -147,9 +158,5 @@ public class Level : MonoBehaviour
     public void ExitAnimationFinished()
     {
 
-        MenuController.Instance.screenFader.FadeFromBlack();
-
-        // Set ship rigidbody to Dynamic
-        playerShip.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
     }
 }

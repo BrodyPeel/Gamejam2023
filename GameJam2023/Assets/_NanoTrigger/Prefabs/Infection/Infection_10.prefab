@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1449530861125509781}
-  - component: {fileID: 3058154208451198668}
   - component: {fileID: 2095687645252161915}
   - component: {fileID: -3341655958550339670}
+  - component: {fileID: -6518144951911440660}
   m_Layer: 6
   m_Name: Infection_10
   m_TagString: Untagged
@@ -34,26 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3058154208451198668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6967966551239289685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf5e8a6e780fee4181d1690f415fa33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  moveSpeed: 0
-  sightRadius: 0
-  attackRadius: 0
-  rotationSpeed: 0
-  canMove: 0
-  damage: 1
-  fadeDuration: 2
 --- !u!212 &2095687645252161915
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -214,3 +194,23 @@ PolygonCollider2D:
       - {x: -0.089999996, y: 0.225}
       - {x: -0.11, y: 0.205}
       - {x: -0.14, y: 0.21499999}
+--- !u!114 &-6518144951911440660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967966551239289685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5acaccaba0c76db4bbdd8a3f2c87e67f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 40
+  moveSpeed: 0
+  sightRadius: 0
+  attackRadius: 0
+  rotationSpeed: 0
+  canMove: 0
+  damage: 1
+  fadeDuration: 1

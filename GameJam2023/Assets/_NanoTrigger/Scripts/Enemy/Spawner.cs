@@ -12,23 +12,30 @@ public class Spawner : Enemy
     private float nextSpawn;
     private int spawned;
 
+    private bool spawning;
+
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
         moveSpeed = 0.0f;
         nextSpawn = Time.time + spawnInterval;
+        spawning = true;
 
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
+        base.Update();
+
+        if (dead) return;
+
         if (GameManager.Instance.state.isState("PlayState"))
         {
             if (spawnPrefab != null)
             {
-                if (spawned < spawnMax && Time.time >= nextSpawn)
+                if (spawned < spawnMax && Time.time >= nextSpawn && spawning)
                 {
                     //TODO update spawn position?
                     SpawnObject();
@@ -43,6 +50,7 @@ public class Spawner : Enemy
 
             if (health <= 0.0f)
             {
+                spawning = false;
                 Death();
             }
         }
