@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer[] spriteRenderers;
     public float flashDuration = 0.3f;
     public float fadeDuration = 1f;
+    private float boostGlowAmount = 0f; 
+    public float glowChangeSpeed = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +72,26 @@ public class PlayerController : MonoBehaviour
             else if (upgradeLevel <= 1 && life <= 0)
             {
                 Death();
+            }
+
+
+            if (isBoosting)
+            {
+                boostGlowAmount = Mathf.Min(boostGlowAmount + glowChangeSpeed * Time.deltaTime, 1f); // Ensure alpha doesn't go over 1
+            }
+            else
+            {
+                boostGlowAmount = Mathf.Max(boostGlowAmount - glowChangeSpeed * Time.deltaTime, 0f); // Ensure alpha doesn't go below 0
+            }
+
+            foreach (SpriteRenderer sr in spriteRenderers)
+            {
+                float currentAlpha = sr.material.GetFloat("_AlphaTintFade");
+
+                if (!Mathf.Approximately(currentAlpha, boostGlowAmount)) // Only update the alpha if it has changed
+                {
+                    sr.material.SetFloat("_AlphaTintFade", boostGlowAmount);
+                }
             }
         }
     }
@@ -279,7 +301,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
-        GameManager.Instance.state.ChangeState(GameManager.Instance.state.deathState);
+        GameManager.Instance.state.ChangeState(GameManager.Instance.state.resultState);
     }
 }
 

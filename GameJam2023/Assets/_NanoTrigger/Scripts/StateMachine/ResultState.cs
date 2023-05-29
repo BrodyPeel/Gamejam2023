@@ -8,12 +8,16 @@ public class ResultState : IState
 
     public void OnEnter(StateController sc)
     {
+        MenuController.Instance.screenFader.FadeToBlack();
         TMPro.TMP_Text text = MenuController.Instance.resultsMenu.resultsText;
 
         text.text = (GameManager.Instance.procedureSuccess) ? "Procedure Complete" : "Procedure Failed";
 
         MenuController.Instance.resultsMenu.playtimeText.text = "Duration: " + GameManager.FormatSeconds(GameManager.Instance.playtime);
-        MenuController.Instance.resultsMenu.scoreText.text = "Score: " + GameManager.Instance.score;
+        //MenuController.Instance.resultsMenu.scoreText.text = "Score: " + GameManager.Instance.score;
+
+        MenuController.Instance.ShowMenu(MenuController.Instance.resultsMenu);
+        MenuController.Instance.eventSystem.SetSelectedGameObject(MenuController.Instance.resultsMenu.nextButton);
     }
 
     public void UpdateState(StateController sc)

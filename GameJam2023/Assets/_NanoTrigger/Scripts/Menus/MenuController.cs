@@ -37,10 +37,16 @@ public class MenuController : MonoBehaviour
 
     public void Pause()
     {
-        if (!isPaused)
+        
+        if (GameManager.Instance.state.isState("PlayState"))
         {
             GameManager.Instance.state.ChangeState(GameManager.Instance.state.pauseState);
-            isPaused = true;
+            return;
+        }
+        else if(GameManager.Instance.state.isState("PauseState"))
+        {
+            GameManager.Instance.state.ChangeState(GameManager.Instance.state.playState);
+            return;
         }
     }
 

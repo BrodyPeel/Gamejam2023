@@ -21,16 +21,14 @@ public abstract class Menu : MonoBehaviour
 
     public void Open()
     {
-        animator.ResetTrigger("Close");
-        animator.SetTrigger("Open");
+        animator.SetBool("isOpen", true);
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
     }
 
     public void Close()
     {
-        animator.ResetTrigger("Open");
-        animator.SetTrigger("Close");
+        animator.SetBool("isOpen", false);
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
     }

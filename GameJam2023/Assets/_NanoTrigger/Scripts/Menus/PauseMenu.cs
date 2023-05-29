@@ -25,8 +25,8 @@ public class PauseMenu : Menu
         // Open the title menu
         Debug.Log("Quit Button Pressed");
         AudioController.Instance.PlaySFX(SFX.Select);
-        GameManager.Instance.state.ChangeState(GameManager.Instance.state.playState);
-        MenuController.Instance.ShowMenu(0);
-        Close();
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -10,6 +10,7 @@ Material:
   m_Name: InfectionMat 2
   m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
   m_ValidKeywords:
+  - _ENABLEADDCOLOR_ON
   - _ENABLEFULLGLOWDISSOLVE_ON
   - _ENABLEPOISON_ON
   - _ENABLEUVDISTORT_ON
@@ -98,7 +99,7 @@ Material:
     m_Floats:
     - PixelSnap: 0
     - _AddColorContrast: 1
-    - _AddColorFade: 1
+    - _AddColorFade: 0
     - _AddHueBrightness: 2
     - _AddHueContrast: 1
     - _AddHueFade: 1
@@ -152,7 +153,7 @@ Material:
     - _DirectionalGlowFadeNoiseFactor: 0.2
     - _DirectionalGlowFadeRotation: 0
     - _DirectionalGlowFadeWidth: 0.1
-    - _EnableAddColor: 0
+    - _EnableAddColor: 1
     - _EnableAddHue: 0
     - _EnableAlphaTint: 0
     - _EnableBlackTint: 0
@@ -344,7 +345,7 @@ Material:
     - _WindSquishWindFactor: 0
     - _WindXPosition: 0
     m_Colors:
-    - _AddColorColor: {r: 0, g: 4, b: 0.5176471, a: 1}
+    - _AddColorColor: {r: 0, g: 1.7974086, b: 5.3403134, a: 0}
     - _AlphaTintColor: {r: 23.96863, g: 1.254902, b: 23.96863, a: 0}
     - _BlackTintColor: {r: 1, g: 0, b: 0, a: 0}
     - _BurnEdgeColor: {r: 11.98431, g: 1.129412, b: 0.1254902, a: 0}

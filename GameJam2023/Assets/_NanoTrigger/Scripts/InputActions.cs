@@ -80,6 +80,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""273d14fe-600f-4461-a96b-69054923d2b5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -146,6 +155,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""UltFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d8dcb5d-c4d3-40be-b953-c19a4f3cab59"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller device"",
+                    ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -319,6 +339,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Gameplay_SecondaryFire = m_Gameplay.FindAction("SecondaryFire", throwIfNotFound: true);
         m_Gameplay_UltFire = m_Gameplay.FindAction("UltFire", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_Select = m_Gameplay.FindAction("Select", throwIfNotFound: true);
         // Menus
         m_Menus = asset.FindActionMap("Menus", throwIfNotFound: true);
         m_Menus_Navigate = m_Menus.FindAction("Navigate", throwIfNotFound: true);
@@ -391,6 +412,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_SecondaryFire;
     private readonly InputAction m_Gameplay_UltFire;
     private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_Select;
     public struct GameplayActions
     {
         private @InputActions m_Wrapper;
@@ -401,6 +423,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @SecondaryFire => m_Wrapper.m_Gameplay_SecondaryFire;
         public InputAction @UltFire => m_Wrapper.m_Gameplay_UltFire;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        public InputAction @Select => m_Wrapper.m_Gameplay_Select;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -428,6 +451,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Select.started += instance.OnSelect;
+            @Select.performed += instance.OnSelect;
+            @Select.canceled += instance.OnSelect;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -450,6 +476,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Select.started -= instance.OnSelect;
+            @Select.performed -= instance.OnSelect;
+            @Select.canceled -= instance.OnSelect;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -546,6 +575,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnSecondaryFire(InputAction.CallbackContext context);
         void OnUltFire(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
     }
     public interface IMenusActions
     {

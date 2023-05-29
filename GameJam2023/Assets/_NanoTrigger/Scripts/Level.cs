@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    public bool isBoss = false;
+
     [SerializeField]
     public int clearCount;
 
@@ -24,8 +26,7 @@ public class Level : MonoBehaviour
     private GameObject shipContainer;  // The container for the ship during the opening animation
     [SerializeField]
     private GameObject shipExitContainer;  // The container for the ship during the exit animation
-    [SerializeField]
-    private GameObject cameraContainer;  // The container for the camera during the door animation
+    public GameObject cameraContainer;  // The container for the camera during the door animation
     [SerializeField]
     private Animator animator;
 
@@ -54,7 +55,15 @@ public class Level : MonoBehaviour
             {
                 // Open Door
                 Debug.Log("Level Complete");
-                StartDoorAnimation();
+                if (!isBoss)
+                {
+                    StartDoorAnimation();
+                }
+                else
+                {
+                    GameManager.Instance.levelManager.CompleteLevel();
+                    levelStarted = false;
+                }
             }
         }
     }

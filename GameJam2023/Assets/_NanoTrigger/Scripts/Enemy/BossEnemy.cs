@@ -80,24 +80,29 @@ public class BossEnemy : Enemy
             float angleIncrement = spreadAngle / (numberOfProjectiles - 1);
             float startAngle = -spreadAngle / 2f;
 
+            Vector2 directionToTarget = (PlayerPosition.position - transform.position).normalized;
+
             for (int i = 0; i < numberOfProjectiles; i++)
             {
                 GameObject bullet = ObjectPool.SharedInstance.GetPooledEnemyProjectileOne();
                 float angle = startAngle + i * angleIncrement;
-                Quaternion rotation = Quaternion.Euler(0f, 0f, angle);                
+                Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
 
                 if (bullet != null)
                 {
                     bullet.transform.position = this.transform.position;
-                    bullet.transform.rotation = this.transform.rotation * rotation;
+
+                    // Aim the bullet in the direction of the target, then apply the spread
+                    bullet.transform.up = directionToTarget;
+                    bullet.transform.Rotate(0f, 0f, angle);
+
                     bullet.SetActive(true);
-                    //TODO replace with different sound
-                    //AudioController.Instance.PlaySFX(SFX.Fire1);
+                    AudioController.Instance.PlaySFX(SFX.EnemySpawn1);
                 }
             }
-            
         }
-        else if(Sequence == 2) //Fires 6 bullets in a line
+
+        else if (Sequence == 2) //Fires 6 bullets in a line
         {
             Vector2 bossPosition = transform.position;
             Vector2 playerDirection = playerShipTransform - bossPosition;
@@ -111,38 +116,43 @@ public class BossEnemy : Enemy
                     bullet.transform.position = bossPosition; // Set the initial position of the projectile to the boss position
                     bullet.transform.rotation = Quaternion.LookRotation(Vector3.forward, normalizedDirection); // Set the rotation of the projectile to face the player
                     bullet.SetActive(true);
-                    //TODO replace with different sound
-                    //AudioController.Instance.PlaySFX(SFX.Fire1);
+
+                    AudioController.Instance.PlaySFX(SFX.EnemySpawn1);
                 }
             }
         }
         else if (Sequence == 3) // fires 12 projectiles in larger spread. Random location.
         {
-            float spreadAngle = 90f;
-            int numberOfProjectiles = 12;
-
-            float angleIncrement = spreadAngle / (numberOfProjectiles - 1);
-            float startAngle = -spreadAngle / 2f;
-
-            for (int i = 0; i < numberOfProjectiles; i++)
-            {
-                GameObject bullet = ObjectPool.SharedInstance.GetPooledEnemyProjectileOne();
-                float angle = startAngle + (Random.Range(1, numberOfProjectiles)) * angleIncrement;
-                Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
-
-                if (bullet != null)
-                {
-                    bullet.transform.position = this.transform.position;
-                    bullet.transform.rotation = this.transform.rotation * rotation;
-                    bullet.SetActive(true);
-                    //TODO replace with different sound
-                    //AudioController.Instance.PlaySFX(SFX.Fire1);
-                }
-            }
+            StartCoroutine(FireSpreadSequence());
         }
-        
-        
     }
 
-    
+    IEnumerator FireSpreadSequence()
+    {
+        float spreadAngle = 90f;
+        int numberOfProjectiles = 12;
+
+        float angleIncrement = spreadAngle / (numberOfProjectiles - 1);
+        float startAngle = -spreadAngle / 2f;
+
+        float delayBetweenBullets = 0.2f; // Modify this for your desired delay time
+
+        for (int i = 0; i < numberOfProjectiles; i++)
+        {
+            GameObject bullet = ObjectPool.SharedInstance.GetPooledEnemyProjectileOne();
+            float angle = startAngle + (Random.Range(1, numberOfProjectiles)) * angleIncrement;
+            Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
+
+            if (bullet != null)
+            {
+                bullet.transform.position = this.transform.position;
+                bullet.transform.rotation = this.transform.rotation * rotation;
+                bullet.SetActive(true);
+                AudioController.Instance.PlaySFX(SFX.EnemySpawn1);
+            }
+
+            // Wait for delay time before continuing the loop.
+            yield return new WaitForSeconds(delayBetweenBullets);
+        }
+    }
 }

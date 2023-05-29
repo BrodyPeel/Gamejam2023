@@ -8,7 +8,6 @@ public class PauseState : IState
 
     public void OnEnter(StateController sc)
     {
-        MenuController.Instance.screenFader.FadeToBlack();
         MenuController.Instance.ShowMenu(MenuController.Instance.pauseMenu);
         MenuController.Instance.eventSystem.SetSelectedGameObject(MenuController.Instance.pauseMenu.resumeButton);
         Time.timeScale = 0f;
@@ -27,7 +26,6 @@ public class PauseState : IState
 
     public void OnExit(StateController sc)
     {
-        MenuController.Instance.screenFader.FadeFromBlack();
         // "Must've been the wind"
     }
 }

@@ -39,6 +39,8 @@ public class Enemy : MonoBehaviour
     protected Transform PlayerPosition;
     protected Vector2 playerShipTransform;
 
+    public float flashDuration = 0.3f;
+
     protected bool dead = false;
 
     // Start is called before the first frame update
@@ -89,9 +91,35 @@ public class Enemy : MonoBehaviour
         //animation for damage?
         AudioController.Instance.PlaySFX(SFX.EnemySpawn1);
         health -= damage;
+        StartCoroutine(FlashEnemy());
     }
 
-    public void Death()
+    private IEnumerator FlashEnemy()
+    {
+        float startTime = Time.time; // Save the start time.
+
+        while (Time.time < startTime + flashDuration)
+        {
+            // The 2nd parameter to PingPong determines how fast it oscillates
+            // We divide flashDuration by 2 so that it goes from 0 to 1 and back to 0 over the course of flashDuration
+            float pingPongValue = Mathf.PingPong((Time.time - startTime) / (flashDuration / 2), 1);
+
+            foreach (SpriteRenderer sr in spriteRenderers)
+            {
+                sr.material.SetFloat("_AddColorFade", pingPongValue);
+            }
+
+            yield return null; // Yield to the next frame.
+        }
+
+        // Ensure all sprites return to their original state after the loop
+        foreach (SpriteRenderer sr in spriteRenderers)
+        {
+            sr.material.SetFloat("_AddColorFade", 0);
+        }
+    }
+
+    public virtual void Death()
     {
         GameManager.Instance.levelManager.currentLevel.cleared += 1;
         Fade();

@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public bool procedureSuccess = false;
 
+    public CanvasGroup noControllerCanvasGroup;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,7 +36,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        var joystickNames = Input.GetJoystickNames();
+        for (int i = 0; i < joystickNames.Length; i++)
+        {
+            if (!string.IsNullOrEmpty(joystickNames[i]))
+            {
+                noControllerCanvasGroup.alpha = 0f;
+            }
+            else
+            {
+                noControllerCanvasGroup.alpha = 1f;
+            }
+        }
     }
 
     public static string FormatSeconds(float totalSeconds)

@@ -107,26 +107,35 @@ public class LevelManager : MonoBehaviour
 
     public void CompleteLevel()
     {
-        // Increase the currentLevel
-        currentDepth++;
-
-        // Check if there are any levels at the new depth
-        if (currentDepth < levels2D.Length && levels2D[currentDepth].Count > 0)
+        if (currentLevel.isBoss)
         {
-            // Select a random level at the new depth
-            int randomIndex = UnityEngine.Random.Range(0, levels2D[currentDepth].Count);
-            Level newLevel = levels2D[currentDepth][randomIndex];
-
-            // Instantiate the new level
-            GameObject newLevelPrefab = levelToPrefab[newLevel];
-            GameObject newLevelObject = Instantiate(newLevelPrefab, Vector3.zero, Quaternion.identity);
-            currentLevel = newLevelObject.GetComponent<Level>();
-
-            GameManager.Instance.state.ChangeState(GameManager.Instance.state.enterLevelState);
+            GameManager.Instance.camera.target = GameManager.Instance.levelManager.currentLevel.cameraContainer.transform;
+            GameManager.Instance.procedureSuccess = true;
+            GameManager.Instance.state.ChangeState(GameManager.Instance.state.resultState);
         }
         else
         {
-            Debug.Log("No more levels available at this depth.");
+            // Increase the currentLevel
+            currentDepth++;
+
+            // Check if there are any levels at the new depth
+            if (currentDepth < levels2D.Length && levels2D[currentDepth].Count > 0)
+            {
+                // Select a random level at the new depth
+                int randomIndex = UnityEngine.Random.Range(0, levels2D[currentDepth].Count);
+                Level newLevel = levels2D[currentDepth][randomIndex];
+
+                // Instantiate the new level
+                GameObject newLevelPrefab = levelToPrefab[newLevel];
+                GameObject newLevelObject = Instantiate(newLevelPrefab, Vector3.zero, Quaternion.identity);
+                currentLevel = newLevelObject.GetComponent<Level>();
+
+                GameManager.Instance.state.ChangeState(GameManager.Instance.state.enterLevelState);
+            }
+            else
+            {
+                Debug.Log("No more levels available at this depth.");
+            }
         }
     }
 }
