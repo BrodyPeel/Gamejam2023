@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     public int upgradeLevel;
     public float maxLife;
     public float life;
+    public int bombs = 3;
+    private float bombInterval = 10.0f;
+    private float nextBombFIre;
 
     public float LifePercentage
     {
@@ -53,6 +56,7 @@ public class PlayerController : MonoBehaviour
         initialUpgradeLevel = upgradeLevel; // Store initial upgrade level.
         maxLife = initialUpgradeLevel * 3; // Calculate max life here.
         life = 3;
+        bombs = 3;
         nextDamageTime = Time.time;
     }
 
@@ -152,7 +156,18 @@ public class PlayerController : MonoBehaviour
         if (GameManager.Instance.state.isState("PlayState"))
         {
             //implement 'ultimate' attack that kills everything
-            //limited fire
+            if(bombs > 0 && Time.time > nextBombFIre)
+            {
+                //fire bomb
+                nextBombFIre = Time.time + bombInterval; //cooldown between firing bomb
+                //animate bomb cooldown?
+                bombs--; //decrement bomb count
+            }
+            else if(bombs <= 0)
+            {
+                bombs = 0;
+                //out of ammo message?
+            }            
         }
     }
 
