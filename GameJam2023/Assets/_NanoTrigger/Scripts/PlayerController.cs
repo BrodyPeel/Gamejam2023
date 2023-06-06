@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private bool isBoosting = false;
     private bool isFiring = false;
     private float nextFireTime = 0f;
+    private float nextDamageTime = 0.0f;
+    private float damageInterval = 0.2f;
     private Vector2 joystickInput = Vector2.zero;
 
     private int initialUpgradeLevel; // Store initial upgrade level here.
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour
         initialUpgradeLevel = upgradeLevel; // Store initial upgrade level.
         maxLife = initialUpgradeLevel * 3; // Calculate max life here.
         life = 3;
+        nextDamageTime = Time.time;
     }
 
     // Update is called once per frame
@@ -226,15 +229,19 @@ public class PlayerController : MonoBehaviour
 
     public void Damage(float Damage)
     {
-        life -= Damage;
-        if(life <= 0)
+        if (Time.time > nextDamageTime)
         {
-            life = 0;
-        }
+            life -= Damage;
+            nextDamageTime += Time.time + damageInterval;
+            if (life <= 0)
+            {
+                life = 0;
+            }
 
-        if (Damage > 0) // If the player takes damage, start the flash.
-        {
-            StartCoroutine(FlashPlayer());
+            if (Damage > 0) // If the player takes damage, start the flash.
+            {
+                StartCoroutine(FlashPlayer());
+            }
         }
     }
 
