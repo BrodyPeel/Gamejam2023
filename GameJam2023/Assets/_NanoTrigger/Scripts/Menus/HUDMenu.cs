@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 
@@ -11,6 +12,6 @@ public class HUDMenu : Menu
     private void Update()
     {
         playtimeText.text = GameManager.FormatSeconds(GameManager.Instance.playtime);
-        statusText.text = "Status: " + GameManager.Instance.ship.GetComponent<PlayerController>().LifePercentage + "%";
+        statusText.text = "Health: " + Math.Round(GameManager.Instance.ship.GetComponent<PlayerController>().LifePercentage, 1) + "%";
     }
 }

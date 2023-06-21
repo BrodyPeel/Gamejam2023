@@ -84,6 +84,21 @@ public class Enemy : MonoBehaviour
             Death();
         }
 
+        foreach (Transform child in transform)
+        {
+            var tracker = child.GetComponent<CollisionTracker>();
+            if (tracker != null)
+            {
+                foreach (var collision in tracker.collisions)
+                {
+                    if (collision.gameObject.CompareTag("Player"))
+                    {
+                        collision.gameObject.GetComponent<PlayerController>().Damage(damage);
+                    }
+                }
+            }
+        }
+
     }
 
     public virtual void TakeDamage(float damage)
@@ -122,6 +137,7 @@ public class Enemy : MonoBehaviour
     public virtual void Death()
     {
         GameManager.Instance.levelManager.currentLevel.cleared += 1;
+        AudioController.Instance.PlaySFX(SFX.EnemyDie1);
         Fade();
         OnEnemyDeath?.Invoke(false);
     }

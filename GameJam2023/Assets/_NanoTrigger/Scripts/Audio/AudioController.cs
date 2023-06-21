@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum Music { NTLoop, Music2 }
-public enum SFX { Select, Fire1, EnemySpawn1, EnemySpawn2, EnemySpawn3, EnemyDie1, EnemyDie2, EnemyDie3 }
+public enum SFX { Select, Fire1, EnemySpawn1, EnemySpawn2, EnemySpawn3, EnemyDie1, EnemyDie2, EnemyDie3, Damage, Boost }
 
 public class AudioController : MonoBehaviour
 {

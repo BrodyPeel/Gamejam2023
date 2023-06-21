@@ -119,6 +119,7 @@ public class Level : MonoBehaviour
     public void DoorAnimationFinished()
     {
         GameManager.Instance.camera.target = GameManager.Instance.ship.transform;
+        GameManager.Instance.ship.GetComponent<PlayerController>().isBoosting = false;
     }
 
     public void StartExitAnimation()
@@ -145,13 +146,18 @@ public class Level : MonoBehaviour
             // Move towards the target position smoothly
             playerShip.transform.position = Vector2.MoveTowards(playerShip.transform.position, exitPosition.position, 2f * Time.deltaTime);
 
-            // Check if the object has reached the target
+            // Calculate the angle to the target
+            Vector2 direction = (exitPosition.position - playerShip.transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
+            // Rotate towards the target
+            playerShip.transform.rotation = Quaternion.Lerp(playerShip.transform.rotation, Quaternion.Euler(0f, 0f, angle - 90f), Time.deltaTime);
+
+            // Check if the object has reached the target
             if (Vector3.Distance(playerShip.transform.position, exitPosition.position) <= 0.1f)
             {
                 Debug.Log("Exit Animation");
                 animator.Play(exitAnimation);
-
 
                 GameManager.Instance.levelManager.CompleteLevel();
                 GameManager.Instance.camera.target = GameManager.Instance.ship.transform;
@@ -163,6 +169,7 @@ public class Level : MonoBehaviour
             yield return null;
         }
     }
+
 
     public void ExitAnimationFinished()
     {

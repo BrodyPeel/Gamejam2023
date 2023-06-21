@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307768415086606}
   - component: {fileID: 8013307768415086607}
+  - component: {fileID: 1765040316000925783}
   m_Layer: 6
   m_Name: bone_25
   m_TagString: Untagged
@@ -55,6 +56,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1765040316000925783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307768415086601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307768484551732
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307768484551733}
   - component: {fileID: 8013307768484551738}
+  - component: {fileID: 7239832981376284015}
   m_Layer: 6
   m_Name: bone_1
   m_TagString: Untagged
@@ -110,6 +124,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &7239832981376284015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307768484551732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307768493814930
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307768493814931}
   - component: {fileID: 8013307768493814928}
+  - component: {fileID: 6431908008297866382}
   m_Layer: 6
   m_Name: bone_6
   m_TagString: Untagged
@@ -165,6 +192,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &6431908008297866382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307768493814930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307768506405227
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307768506405224}
   - component: {fileID: 8013307768506405225}
+  - component: {fileID: 5112185620666501994}
   m_Layer: 6
   m_Name: bone_5
   m_TagString: Untagged
@@ -220,6 +260,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &5112185620666501994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307768506405227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307768608997026
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307768608997027}
   - component: {fileID: 8013307768608997024}
+  - component: {fileID: 8794383673803420741}
   m_Layer: 6
   m_Name: bone_22
   m_TagString: Untagged
@@ -275,6 +328,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &8794383673803420741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307768608997026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307768673025904
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307768673025905}
   - component: {fileID: 8013307768673025910}
+  - component: {fileID: 2488253591224391742}
   m_Layer: 6
   m_Name: bone_6
   m_TagString: Untagged
@@ -330,6 +396,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &2488253591224391742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307768673025904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307768678868699
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307768678868696}
   - component: {fileID: 8013307768678868697}
+  - component: {fileID: 7370825042934064796}
   m_Layer: 6
   m_Name: bone_4
   m_TagString: Untagged
@@ -385,6 +464,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &7370825042934064796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307768678868699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307768705484631
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +489,7 @@ GameObject:
   - component: {fileID: 8013307768705484634}
   - component: {fileID: 8013307768705484629}
   - component: {fileID: 8013307768705484628}
-  - component: {fileID: 2656279437611132397}
+  - component: {fileID: 4227945295620304675}
   m_Layer: 6
   m_Name: Infection_8
   m_TagString: Untagged
@@ -443,6 +534,7 @@ MonoBehaviour:
   canMove: 0
   damage: 1
   fadeDuration: 1
+  flashDuration: 0.3
 --- !u!212 &8013307768705484634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -546,7 +638,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!60 &2656279437611132397
+--- !u!60 &4227945295620304675
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -571,50 +663,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.21, y: -0.9}
-      - {x: -0.22, y: -0.78}
-      - {x: -0.22999999, y: -0.59999996}
-      - {x: -0.07, y: -0.34}
-      - {x: 0, y: -0.16}
-      - {x: 0.02, y: 0.19}
-      - {x: 0.049999997, y: 0.35999998}
-      - {x: 0.22, y: 0.56}
-      - {x: 0.45999998, y: 0.65999997}
-      - {x: 0.93, y: 0.89}
-      - {x: 1.01, y: 1.03}
-      - {x: 1.01, y: 1.25}
-      - {x: 0.95, y: 1.35}
-      - {x: 0.93, y: 1.36}
-      - {x: 0.85999995, y: 1.36}
-      - {x: 0.85999995, y: 1.3399999}
-      - {x: 0.9, y: 1.26}
-      - {x: 0.88, y: 1.11}
-      - {x: 0.71999997, y: 0.96}
-      - {x: 0.19, y: 0.76}
-      - {x: -0.07, y: 0.52}
-      - {x: -0.13, y: 0.34}
-      - {x: -0.14, y: 0}
-      - {x: -0.25, y: -0.29999998}
-      - {x: -0.32, y: -0.37}
-      - {x: -0.39999998, y: -0.51}
-      - {x: -0.65, y: -0.74}
-      - {x: -0.78999996, y: -0.74}
-      - {x: -0.94, y: -0.78999996}
-      - {x: -1.01, y: -0.84999996}
-      - {x: -1.01, y: -0.97999996}
-      - {x: -0.98999995, y: -1.01}
-      - {x: -0.71999997, y: -1.0699999}
-      - {x: -0.76, y: -1.1999999}
-      - {x: -0.71999997, y: -1.25}
-      - {x: -0.65999997, y: -1.3}
-      - {x: -0.56, y: -1.29}
-      - {x: -0.48, y: -1.23}
-      - {x: -0.45, y: -1.3299999}
-      - {x: -0.41, y: -1.36}
-      - {x: -0.26999998, y: -1.36}
-      - {x: -0.22999999, y: -1.3299999}
-      - {x: -0.099999994, y: -1.17}
-      - {x: -0.11, y: -1.03}
+    - - {x: -0.22482248, y: -1.2594445}
+      - {x: -0.62020624, y: -1.1802062}
+      - {x: -1.0044733, y: -0.8408649}
+      - {x: -0.43685573, y: -0.599393}
+      - {x: -0.22974813, y: -0.87147784}
 --- !u!1 &8013307768887166098
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307768887166099}
   - component: {fileID: 8013307768887166096}
+  - component: {fileID: 8357206619589632397}
   m_Layer: 6
   m_Name: bone_8
   m_TagString: Untagged
@@ -670,6 +724,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &8357206619589632397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307768887166098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307768932344599
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307768932344596}
   - component: {fileID: 8013307768932344597}
+  - component: {fileID: 3574067293615144968}
   m_Layer: 6
   m_Name: bone_23
   m_TagString: Untagged
@@ -725,6 +792,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &3574067293615144968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307768932344599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307768953154695
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307768953154692}
   - component: {fileID: 8013307768953154693}
+  - component: {fileID: 5839209931454004059}
   m_Layer: 6
   m_Name: bone_10
   m_TagString: Untagged
@@ -780,6 +860,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &5839209931454004059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307768953154695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769011778699
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769011778696}
   - component: {fileID: 8013307769011778697}
+  - component: {fileID: 257118552833160645}
   m_Layer: 6
   m_Name: bone_14
   m_TagString: Untagged
@@ -835,6 +928,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &257118552833160645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769011778699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769179968757
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +950,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769179968762}
   - component: {fileID: 8013307769179968763}
+  - component: {fileID: 4901989545491969800}
   m_Layer: 6
   m_Name: bone_21
   m_TagString: Untagged
@@ -890,6 +996,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &4901989545491969800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769179968757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769199274116
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +1018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769199274117}
   - component: {fileID: 8013307769199274122}
+  - component: {fileID: 4914906145188455211}
   m_Layer: 6
   m_Name: bone_11
   m_TagString: Untagged
@@ -945,6 +1064,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &4914906145188455211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769199274116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769208432993
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +1086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769208432998}
   - component: {fileID: 8013307769208432999}
+  - component: {fileID: 8600506928603685685}
   m_Layer: 6
   m_Name: bone_17
   m_TagString: Untagged
@@ -1000,6 +1132,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &8600506928603685685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769208432993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769227176972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,6 +1154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769227176973}
   - component: {fileID: 8013307769227177074}
+  - component: {fileID: 937798784401133872}
   m_Layer: 6
   m_Name: bone_5
   m_TagString: Untagged
@@ -1055,6 +1200,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &937798784401133872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769227176972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769324191995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769324191992}
   - component: {fileID: 8013307769324191993}
+  - component: {fileID: 347252476769543779}
   m_Layer: 6
   m_Name: bone_9
   m_TagString: Untagged
@@ -1111,6 +1269,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &347252476769543779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769324191995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769342789014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769342789015}
   - component: {fileID: 8013307769342789012}
+  - component: {fileID: 2904346440211597275}
   m_Layer: 6
   m_Name: bone_7
   m_TagString: Untagged
@@ -1166,6 +1337,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &2904346440211597275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769342789014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769423890579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769423890576}
   - component: {fileID: 8013307769423890577}
+  - component: {fileID: 8105525524655427741}
   m_Layer: 6
   m_Name: bone_15
   m_TagString: Untagged
@@ -1221,6 +1405,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &8105525524655427741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769423890579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769439798137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769439798142}
   - component: {fileID: 8013307769439798143}
+  - component: {fileID: 8713283243330609384}
   m_Layer: 6
   m_Name: bone_3
   m_TagString: Untagged
@@ -1276,6 +1473,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &8713283243330609384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769439798137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769440936881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769440936886}
   - component: {fileID: 8013307769440936887}
+  - component: {fileID: 2983979834111404968}
   m_Layer: 6
   m_Name: bone_10
   m_TagString: Untagged
@@ -1330,6 +1540,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &2983979834111404968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769440936881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769471604406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769471604407}
   - component: {fileID: 8013307769471604404}
+  - component: {fileID: 7756757543323180803}
   m_Layer: 6
   m_Name: bone_1
   m_TagString: Untagged
@@ -1385,6 +1608,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &7756757543323180803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769471604406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769524751951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,6 +1630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769524751948}
   - component: {fileID: 8013307769524751949}
+  - component: {fileID: 5878335121325135535}
   m_Layer: 6
   m_Name: bone_12
   m_TagString: Untagged
@@ -1440,6 +1676,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &5878335121325135535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769524751951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769562772691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,6 +1698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769562772688}
   - component: {fileID: 8013307769562772689}
+  - component: {fileID: 4467056570178882569}
   m_Layer: 6
   m_Name: bone_19
   m_TagString: Untagged
@@ -1495,6 +1744,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &4467056570178882569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769562772691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769858395001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,6 +1766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769858395006}
   - component: {fileID: 8013307769858395007}
+  - component: {fileID: 6976184971083840028}
   m_Layer: 6
   m_Name: bone_2
   m_TagString: Untagged
@@ -1550,6 +1812,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &6976184971083840028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769858395001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769874876401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,6 +1834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769874876406}
   - component: {fileID: 8013307769874876407}
+  - component: {fileID: 1974938196938197033}
   m_Layer: 6
   m_Name: bone_27
   m_TagString: Untagged
@@ -1605,6 +1880,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1974938196938197033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769874876401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307769919137585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,6 +1902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307769919137590}
   - component: {fileID: 8013307769919137591}
+  - component: {fileID: 2971695301829525495}
   m_Layer: 6
   m_Name: bone_7
   m_TagString: Untagged
@@ -1660,6 +1948,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &2971695301829525495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307769919137585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307770002638965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +1970,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307770002638970}
   - component: {fileID: 8013307770002638971}
+  - component: {fileID: 547819672463051317}
   m_Layer: 6
   m_Name: bone_13
   m_TagString: Untagged
@@ -1714,6 +2015,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &547819672463051317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307770002638965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307770073067214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +2037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307770073067215}
   - component: {fileID: 8013307770073067212}
+  - component: {fileID: 5189766461200041386}
   m_Layer: 6
   m_Name: bone_18
   m_TagString: Untagged
@@ -1769,6 +2083,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &5189766461200041386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307770073067214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307770121922521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,6 +2239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307770185410410}
   - component: {fileID: 8013307770185410411}
+  - component: {fileID: 1360868579339186629}
   m_Layer: 6
   m_Name: bone_8
   m_TagString: Untagged
@@ -1958,6 +2285,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1360868579339186629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307770185410405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307770238314013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,6 +2307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307770238313986}
   - component: {fileID: 8013307770238313987}
+  - component: {fileID: 2301839824649018348}
   m_Layer: 6
   m_Name: bone_26
   m_TagString: Untagged
@@ -2013,6 +2353,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &2301839824649018348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307770238314013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307770248882691
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,6 +2375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307770248882688}
   - component: {fileID: 8013307770248882689}
+  - component: {fileID: 4352176393617141745}
   m_Layer: 6
   m_Name: bone_3
   m_TagString: Untagged
@@ -2068,6 +2421,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &4352176393617141745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307770248882691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307770305462133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,6 +2443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307770305462138}
   - component: {fileID: 8013307770305462139}
+  - component: {fileID: 492080323242689328}
   m_Layer: 6
   m_Name: bone_16
   m_TagString: Untagged
@@ -2123,6 +2489,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &492080323242689328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307770305462133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307770332048115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,6 +2511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307770332048112}
   - component: {fileID: 8013307770332048113}
+  - component: {fileID: 7644655050313757954}
   m_Layer: 6
   m_Name: bone_4
   m_TagString: Untagged
@@ -2178,6 +2557,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &7644655050313757954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307770332048115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307770373886157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,6 +2579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307770373886770}
   - component: {fileID: 8013307770373886771}
+  - component: {fileID: 5368741069800452743}
   m_Layer: 6
   m_Name: bone_24
   m_TagString: Untagged
@@ -2233,6 +2625,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &5368741069800452743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307770373886157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307770409494207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,6 +2647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307770409494204}
   - component: {fileID: 8013307770409494205}
+  - component: {fileID: 2269048106133204139}
   m_Layer: 6
   m_Name: bone_20
   m_TagString: Untagged
@@ -2288,6 +2693,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &2269048106133204139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307770409494207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307770417623260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,6 +2715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307770417623261}
   - component: {fileID: 8013307770417623234}
+  - component: {fileID: 4163306879378719792}
   m_Layer: 6
   m_Name: bone_9
   m_TagString: Untagged
@@ -2343,6 +2761,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &4163306879378719792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307770417623260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8013307770449797473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2353,6 +2783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8013307770449797478}
   - component: {fileID: 8013307770449797479}
+  - component: {fileID: 4437914367857959035}
   m_Layer: 6
   m_Name: bone_2
   m_TagString: Untagged
@@ -2398,3 +2829,15 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &4437914367857959035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013307770449797473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2160d0b6618e534aa25c6ca9762f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

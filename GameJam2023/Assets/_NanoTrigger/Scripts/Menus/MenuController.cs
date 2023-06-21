@@ -50,6 +50,11 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    public void EscapeKey()
+    {
+        Application.Quit();
+    }
+
     public void ShowMenu(int menuIndex)
     {
         if(currentMenu != null)
