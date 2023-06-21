@@ -19,12 +19,17 @@ public class PlayerController : MonoBehaviour
     private bool isBoosting = false;
     private bool isFiring = false;
     private float nextFireTime = 0f;
+    private float nextDamageTime = 0.0f;
+    private float damageInterval = 0.2f;
     private Vector2 joystickInput = Vector2.zero;
 
     private int initialUpgradeLevel; // Store initial upgrade level here.
     public int upgradeLevel;
     public float maxLife;
     public float life;
+    public int bombs = 3;
+    private float bombInterval = 10.0f;
+    private float nextBombFIre;
 
     public float LifePercentage
     {
@@ -51,6 +56,8 @@ public class PlayerController : MonoBehaviour
         initialUpgradeLevel = upgradeLevel; // Store initial upgrade level.
         maxLife = initialUpgradeLevel * 3; // Calculate max life here.
         life = 3;
+        bombs = 3;
+        nextDamageTime = Time.time;
     }
 
     // Update is called once per frame
@@ -149,7 +156,18 @@ public class PlayerController : MonoBehaviour
         if (GameManager.Instance.state.isState("PlayState"))
         {
             //implement 'ultimate' attack that kills everything
-            //limited fire
+            if(bombs > 0 && Time.time > nextBombFIre)
+            {
+                //fire bomb
+                nextBombFIre = Time.time + bombInterval; //cooldown between firing bomb
+                //animate bomb cooldown?
+                bombs--; //decrement bomb count
+            }
+            else if(bombs <= 0)
+            {
+                bombs = 0;
+                //out of ammo message?
+            }            
         }
     }
 
@@ -226,15 +244,19 @@ public class PlayerController : MonoBehaviour
 
     public void Damage(float Damage)
     {
-        life -= Damage;
-        if(life <= 0)
+        if (Time.time > nextDamageTime)
         {
-            life = 0;
-        }
+            life -= Damage;
+            nextDamageTime += Time.time + damageInterval;
+            if (life <= 0)
+            {
+                life = 0;
+            }
 
-        if (Damage > 0) // If the player takes damage, start the flash.
-        {
-            StartCoroutine(FlashPlayer());
+            if (Damage > 0) // If the player takes damage, start the flash.
+            {
+                StartCoroutine(FlashPlayer());
+            }
         }
     }
 
