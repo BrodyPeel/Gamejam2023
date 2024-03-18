@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     new public CameraController camera;
     public StateController state;
     public LevelManager levelManager;
+    public MapManager mapManager;
 
     public float playtime;
     public int score;

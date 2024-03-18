@@ -16,12 +16,13 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 5f;    
     public float rotationThreshold = 0.2f;
 
-    private bool isBoosting = false;
+    public bool isBoosting = false;
     private bool isFiring = false;
     private float nextFireTime = 0f;
     private float nextDamageTime = 0.0f;
     private float damageInterval = 0.2f;
-    private Vector2 joystickInput = Vector2.zero;
+    private Vector2 joystickInput = Vector2.zero; 
+    private Vector2 previousJoystickInput = Vector2.zero; 
 
     private int initialUpgradeLevel; // Store initial upgrade level here.
     public int upgradeLevel;
@@ -107,28 +108,32 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.Instance.state.isState("PlayState"))
         {
-            Vector2 leftStickInput = context.ReadValue<Vector2>();
+            Vector2 movementInput = context.ReadValue<Vector2>();
             float speed = isBoosting ? moveSpeed[upgradeLevel - 1] + boostSpeed : moveSpeed[upgradeLevel - 1];
-            // Check if the right stick is not in use
-            if (Gamepad.current != null && Gamepad.current.rightStick.ReadValue().magnitude <= 0f)
+
+
+            // Add force for movement
+            rigidbody.AddForce(movementInput * speed, ForceMode2D.Force);
+
+            // Check if there is no significant aiming input
+            if (joystickInput.magnitude <= rotationThreshold)
             {
-                // Call RotatePlayer() only when the left stick is used and the right stick is not in use
-                if (leftStickInput.magnitude > 0f)
+                // Use movement input for rotation if there's significant movement
+                if (movementInput.magnitude > rotationThreshold)
                 {
-                    RotatePlayer(leftStickInput);
+                    RotatePlayer(movementInput);
                 }
             }
-
-            rigidbody.AddForce(leftStickInput * speed, ForceMode2D.Force);
         }
     }
+
 
     public void OnPrimaryFire(InputAction.CallbackContext context)
     {
         if (GameManager.Instance.state.isState("PlayState"))
         {
             joystickInput = context.ReadValue<Vector2>();
-
+            UpdateAimDirection(joystickInput);
             // Rotate the player
             RotatePlayer(joystickInput);
 
@@ -171,20 +176,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void UpdateAimDirection(Vector2 aimInput)
+    {
+        GameManager.Instance.camera.aimDirection = aimInput.normalized; // Update the camera with the current aim direction
+    }
+
+
     void RotatePlayer(Vector2 joystickInput)
     {
         if (GameManager.Instance.state.isState("PlayState"))
         {
-            // Rotate the player based on joystick input
-            if (joystickInput.magnitude > rotationThreshold)
+            // Reset Angular Velocity to prevent unwanted drift
+            rigidbody.angularVelocity = 0f;
+
+            // Calculate the difference in direction from the last frame
+            float directionChange = Vector2.Distance(joystickInput, previousJoystickInput);
+
+            // Check if the joystick input magnitude is greater than the rotationThreshold 
+            // and if the direction change is significant
+            if (joystickInput.magnitude > rotationThreshold && directionChange > rotationThreshold)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, joystickInput);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
-            else if (joystickInput.magnitude <= 0.0f)
-            {
 
-            }
+            // Update previousJoystickInput for the next frame
+            previousJoystickInput = joystickInput;
         }
     }
 

@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d01fa8b9b2cd64597dc0d66f8d3b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxFactorX: 0.2
-  parallaxFactorY: 0.2
+  parallaxFactorX: 0.05
+  parallaxFactorY: 0.05

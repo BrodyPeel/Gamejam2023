@@ -44,41 +44,48 @@ public class Enemy : MonoBehaviour
     protected bool dead = false;
 
     // Start is called before the first frame update
+    // Start is called before the first frame update
     public virtual void Start()
     {
         currentState = EnemyState.Idle;
-        GameManager.Instance.levelManager.currentLevel.clearCount += 1;
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-        foreach(SpriteRenderer sr in spriteRenderers)
+        foreach (SpriteRenderer sr in spriteRenderers)
         {
             sr.material.SetFloat("_FullAlphaDissolveFade", 1f);
         }
+
+        // Find the player's transform at the start to avoid repeated searches.
+        PlayerPosition = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     public virtual void Update()
     {
-        if (dead) return;
+        if (dead || PlayerPosition == null) return;
+
+        // Check the distance to the player and proceed only if within sightRadius
+        if (Vector2.Distance(transform.position, PlayerPosition.position) > sightRadius)
+        {
+            return; // Player is too far, skip the rest of the update
+        }
 
         switch (currentState)
         {
             case EnemyState.Idle:
-                // Handle idle state behavior
-                //if see the nanobot currentState = EnemyState.Chase
-                //if nanobot within attackradius currentState = EnemyState.Attack.
+                // Transition to Chase or Attack based on player's proximity
                 break;
             case EnemyState.Chase:
-                // Handle chase state behavior
+                // Chase player
                 break;
             case EnemyState.Attack:
-                // Handle attack state behavior
+                // Attack player
                 break;
             case EnemyState.Death:
-                //handle death behavior
+                // Handle death
                 break;
         }
 
-        if(health <= 0)
+        if (health <= 0)
         {
             dead = true;
             Death();
@@ -98,7 +105,6 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
-
     }
 
     public virtual void TakeDamage(float damage)
@@ -136,7 +142,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void Death()
     {
-        GameManager.Instance.levelManager.currentLevel.cleared += 1;
+        //GameManager.Instance.levelManager.currentLevel.cleared += 1;
         AudioController.Instance.PlaySFX(SFX.EnemyDie1);
         Fade();
         OnEnemyDeath?.Invoke(false);

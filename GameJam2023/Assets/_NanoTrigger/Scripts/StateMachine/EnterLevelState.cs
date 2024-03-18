@@ -8,13 +8,11 @@ public class EnterLevelState : IState
 
     public void OnEnter(StateController sc)
     {
-        // "What was that!?"
         GameManager.Instance.levelManager.currentLevel.StartLevelAnimation();
         MenuController.Instance.screenFader.FadeFromBlack();
     }
     public void UpdateState(StateController sc)
     {
-        // Search for player
     }
     public void OnPause(StateController sc)
     {
@@ -23,6 +21,5 @@ public class EnterLevelState : IState
     }
     public void OnExit(StateController sc)
     {
-        // "Must've been the wind"
     }
 }

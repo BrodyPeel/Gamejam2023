@@ -85,10 +85,13 @@ MonoBehaviour:
   rotationSpeed: 0
   canMove: 0
   damage: 0
+  fadeDuration: 1
+  flashDuration: 0.3
   spawnPrefab: {fileID: 9182174685202025841, guid: 1e3c90513de720443bdd17c78ba5ef10, type: 3}
-  spawnMax: 5
+  spawnMax: 3
   spawnInterval: 7
   spawnPosition: {fileID: 2281259297369953289}
+  spawnDistance: 8
 --- !u!212 &6601798220579684762
 SpriteRenderer:
   m_ObjectHideFlags: 0

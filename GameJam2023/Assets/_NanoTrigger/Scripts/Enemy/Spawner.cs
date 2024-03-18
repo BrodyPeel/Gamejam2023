@@ -8,13 +8,16 @@ public class Spawner : Enemy
     public int spawnMax;
     public float spawnInterval;
     public Transform spawnPosition;
+    public float spawnDistance = 10f; // Distance within which the player needs to be for the spawner to be active
 
     private float nextSpawn;
     private int spawned;
 
     private bool spawning;
 
-    // Start is called before the first frame update
+    // Reference to the player's transform
+    private Transform playerTransform;
+
     public override void Start()
     {
         base.Start();
@@ -22,30 +25,34 @@ public class Spawner : Enemy
         nextSpawn = Time.time + spawnInterval;
         spawning = true;
 
+        // Assuming you have a player object tagged with "Player" in your scene
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerTransform = player.transform;
+        }
     }
 
-    // Update is called once per frame
     public override void Update()
     {
         base.Update();
 
-        if (dead) return;
+        if (dead || playerTransform == null) return;
 
         if (GameManager.Instance.state.isState("PlayState"))
         {
-            if (spawnPrefab != null)
+            float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+            if (distanceToPlayer <= spawnDistance)
             {
-                if (spawned < spawnMax && Time.time >= nextSpawn && spawning)
+                if (spawnPrefab != null && spawned < spawnMax && Time.time >= nextSpawn && spawning)
                 {
-                    //TODO update spawn position?
                     SpawnObject();
                     nextSpawn = Time.time + spawnInterval;
-
                 }
             }
             else
             {
-                Debug.Log("There is no Spawn Object");
+                return;
             }
 
             if (health <= 0.0f)
@@ -54,15 +61,16 @@ public class Spawner : Enemy
                 Death();
             }
         }
-    }    
+    }
 
     public void SpawnObject()
     {
         GameObject spawnedObject = Instantiate(spawnPrefab, spawnPosition.position, spawnPosition.rotation);
         spawnedObject.GetComponent<Spawned>().OnDeath += HandleSpawnedDeath;
         AudioController.Instance.PlaySFX(SFX.EnemySpawn2);
-        spawned++;        
+        spawned++;
     }
+
     private void HandleSpawnedDeath()
     {
         // Handle the death event of the spawned object
@@ -74,5 +82,4 @@ public class Spawner : Enemy
         base.TakeDamage(damage);
         AudioController.Instance.PlaySFX(SFX.EnemySpawn1);
     }
-
 }
