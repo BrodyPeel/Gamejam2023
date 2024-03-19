@@ -11,6 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 0803c241834332942abfcbd27c498b46, type: 3}
   m_ValidKeywords:
   - _ENABLECAMOUFLAGE_ON
+  - _ENABLEFROZEN_ON
+  - _ENABLEUVDISTORT_ON
   - _SHADERSPACE_UV
   - _TIMESETTINGS_LINEAR_DEFAULT
   - _UBERFADING_NONE
@@ -166,7 +168,7 @@ Material:
     - _EnableDirectionalGlowFade: 0
     - _EnableExternalAlpha: 0
     - _EnableFlame: 0
-    - _EnableFrozen: 0
+    - _EnableFrozen: 1
     - _EnableFullAlphaDissolve: 0
     - _EnableFullDistortion: 0
     - _EnableFullGlowDissolve: 0
@@ -195,7 +197,7 @@ Material:
     - _EnableSqueeze: 0
     - _EnableSquish2: 0
     - _EnableStrongTint: 0
-    - _EnableUVDistort: 0
+    - _EnableUVDistort: 1
     - _EnableUVRotate: 0
     - _EnableUVScale: 0
     - _EnableUVScroll: 0
@@ -211,7 +213,7 @@ Material:
     - _FrozenHighlightContrast: 2
     - _FrozenHighlightDensity: 1
     - _FrozenSnowContrast: 1
-    - _FrozenSnowDensity: 0.25
+    - _FrozenSnowDensity: 1
     - _FullAlphaDissolveFade: 0.5
     - _FullAlphaDissolveWidth: 0.5
     - _FullDistortionFade: 1
@@ -379,9 +381,9 @@ Material:
     - _FrozenHighlightDistortionSpeed: {r: -0.05, g: -0.05, b: 0, a: 0}
     - _FrozenHighlightScale: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _FrozenHighlightSpeed: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - _FrozenSnowColor: {r: 1.123529, g: 1.373203, b: 1.498039, a: 0}
+    - _FrozenSnowColor: {r: 0, g: 0.34042543, b: 0.4999999, a: 0}
     - _FrozenSnowScale: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - _FrozenTint: {r: 1.819608, g: 4.611765, b: 5.992157, a: 0}
+    - _FrozenTint: {r: 0, g: 21.458824, b: 32, a: 0}
     - _FullAlphaDissolveNoiseScale: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _FullDistortionDistortion: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _FullDistortionNoiseScale: {r: 0.5, g: 0.5, b: 0, a: 0}

@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
                 boostGlowAmount = Mathf.Max(boostGlowAmount - glowChangeSpeed * Time.deltaTime, 0f); // Ensure alpha doesn't go below 0
             }
 
+            /*
             foreach (SpriteRenderer sr in spriteRenderers)
             {
                 float currentAlpha = sr.material.GetFloat("_AlphaTintFade");
@@ -101,6 +102,7 @@ public class PlayerController : MonoBehaviour
                     sr.material.SetFloat("_AlphaTintFade", boostGlowAmount);
                 }
             }
+            */
         }
     }
 

@@ -138,7 +138,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 565157503
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b76fd0fea94417440883093aa6c297c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -210,6 +210,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6064186636829469312}
     m_Modifications:
+    - target: {fileID: 3685830024610634740, guid: 761511d9e1c78344b9dc6c642ebc6309, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685830024610634740, guid: 761511d9e1c78344b9dc6c642ebc6309, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685830024610634740, guid: 761511d9e1c78344b9dc6c642ebc6309, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685830024610634740, guid: 761511d9e1c78344b9dc6c642ebc6309, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8301887
+      objectReference: {fileID: 0}
     - target: {fileID: 6097781355273224190, guid: 761511d9e1c78344b9dc6c642ebc6309, type: 3}
       propertyPath: m_Name
       value: BG_Flesh_0
