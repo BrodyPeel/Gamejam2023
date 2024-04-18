@@ -26,6 +26,7 @@ public abstract class Menu : MonoBehaviour
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
         MenuController.Instance.eventSystem.SetSelectedGameObject(firstSelected);
+        Debug.Log(MenuController.Instance.eventSystem.currentSelectedGameObject.name);
     }
 
     public void Close()

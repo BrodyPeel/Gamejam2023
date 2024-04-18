@@ -27,9 +27,9 @@ public class RangedEnemy : Enemy
     }
 
     // Update is called once per frame
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
 
         if (dead) return;
 
