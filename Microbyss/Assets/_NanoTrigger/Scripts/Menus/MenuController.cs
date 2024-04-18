@@ -64,7 +64,6 @@ public class MenuController : MonoBehaviour
     {
         if(currentMenu != null)
         {
-            previousMenu = currentMenu;
             currentMenu.Close();
         }
 
@@ -76,7 +75,6 @@ public class MenuController : MonoBehaviour
     {
         if (currentMenu != null)
         {
-            previousMenu = currentMenu;
             currentMenu.Close();
         }
 

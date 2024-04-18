@@ -6,7 +6,7 @@ public abstract class Menu : MonoBehaviour
     private RectTransform rectTransform;
     [SerializeField] protected CanvasGroup canvasGroup;
     [SerializeField] protected Animator animator;
-    [SerializeField] protected GameObject firstSelected;
+    [SerializeField] protected Selectable firstSelected;
 
     protected virtual void Awake()
     {
@@ -25,8 +25,13 @@ public abstract class Menu : MonoBehaviour
         animator.SetBool("isOpen", true);
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
-        MenuController.Instance.eventSystem.SetSelectedGameObject(firstSelected);
-        Debug.Log(MenuController.Instance.eventSystem.currentSelectedGameObject.name);
+        if (firstSelected != null)
+        {
+            firstSelected.Select();
+            MenuController.Instance.eventSystem.SetSelectedGameObject(null);
+            MenuController.Instance.eventSystem.SetSelectedGameObject(firstSelected.gameObject);
+            Debug.Log(MenuController.Instance.eventSystem.currentSelectedGameObject.name);
+        }
     }
 
     public void Close()
