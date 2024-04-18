@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,9 +8,13 @@ public class MenuController : MonoBehaviour
 
     [SerializeField] private Menu[] menus;
     [SerializeField] private Menu currentMenu;
+    [SerializeField] private Menu previousMenu;
 
+    public TitleMenu titleMenu;
     public ResultsMenu resultsMenu;
     public PauseMenu pauseMenu;
+    public SettingsMenu settingsMenu;
+    public KeyMappingMenu keyMappingMenu;
 
     public ScreenFader screenFader;
 
@@ -59,6 +64,7 @@ public class MenuController : MonoBehaviour
     {
         if(currentMenu != null)
         {
+            previousMenu = currentMenu;
             currentMenu.Close();
         }
 
@@ -70,6 +76,7 @@ public class MenuController : MonoBehaviour
     {
         if (currentMenu != null)
         {
+            previousMenu = currentMenu;
             currentMenu.Close();
         }
 

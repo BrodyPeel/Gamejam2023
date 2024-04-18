@@ -6,6 +6,7 @@ public abstract class Menu : MonoBehaviour
     private RectTransform rectTransform;
     [SerializeField] protected CanvasGroup canvasGroup;
     [SerializeField] protected Animator animator;
+    [SerializeField] protected GameObject firstSelected;
 
     protected virtual void Awake()
     {
@@ -24,6 +25,7 @@ public abstract class Menu : MonoBehaviour
         animator.SetBool("isOpen", true);
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
+        MenuController.Instance.eventSystem.SetSelectedGameObject(firstSelected);
     }
 
     public void Close()

@@ -123,7 +123,7 @@ public class Spawned : Enemy
     {
         //instantiate projectiles? 
         //fire towards player
-        Debug.Log("ATTACK");
+       // Debug.Log("ATTACK");
     }
 
     public override void TakeDamage(float damage)

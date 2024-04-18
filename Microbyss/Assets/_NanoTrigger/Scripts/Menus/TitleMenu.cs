@@ -12,4 +12,10 @@ public class TitleMenu : Menu
         GameManager.Instance.state.ChangeState(GameManager.Instance.state.playState);
         Close();
     }
+
+    public void Settings()
+    {
+        AudioController.Instance.PlaySFX(SFX.Select);
+        MenuController.Instance.ShowMenu(MenuController.Instance.settingsMenu);
+    }
 }
