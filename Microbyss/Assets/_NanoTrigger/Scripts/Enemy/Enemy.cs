@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    public virtual void Update()
+    public virtual void FixedUpdate()
     {
         if (dead || PlayerPosition == null) return;
 

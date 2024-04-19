@@ -47,9 +47,9 @@ public class AudioPool : MonoBehaviour
 
     private IEnumerator ReturnSourceToPool(AudioSource source, float delay)
     {
-        Debug.Log($"Source will be returned to pool in {delay} seconds. Currently looping: {source.loop}.");
+        //Debug.Log($"Source will be returned to pool in {delay} seconds. Currently looping: {source.loop}.");
         yield return new WaitForSeconds(delay);
-        Debug.Log("Returning source to pool...");
+        //Debug.Log("Returning source to pool...");
         source.loop = false;
         source.Stop();
         source.gameObject.SetActive(false);

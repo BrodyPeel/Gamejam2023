@@ -55,14 +55,16 @@ public class MapManager : MonoBehaviour
 
     IEnumerator UpdateMapTiles(Vector3 playerPosition)
     {
+        // Calculate the player's tile position
         Vector2 playerTilePos = new Vector2(Mathf.Round(playerPosition.x / tileSize), Mathf.Round(playerPosition.y / tileSize));
-        List<Vector2> tilePositionsToUpdate = new List<Vector2>();
 
+        // Iterate through tiles to update
+        List<Vector2> tilePositionsToUpdate = new List<Vector2>();
         for (int x = -tileUpdateDistance; x <= tileUpdateDistance; x++)
         {
             for (int y = -tileUpdateDistance; y <= tileUpdateDistance; y++)
             {
-                Vector2 tilePos = new Vector2(playerTilePos.x + x, playerTilePos.y + y);
+                Vector2 tilePos = playerTilePos + new Vector2(x, y);
                 if (!TileExistsAt(tilePos))
                 {
                     tilePositionsToUpdate.Add(tilePos);
@@ -71,17 +73,19 @@ public class MapManager : MonoBehaviour
             yield return null;
         }
 
+        // Sort the tile positions based on their distance from the player
         tilePositionsToUpdate.Sort((a, b) => Vector2.Distance(playerTilePos, a).CompareTo(Vector2.Distance(playerTilePos, b)));
 
+        // Generate/update tiles and cull distant tiles
         foreach (Vector2 tilePos in tilePositionsToUpdate)
         {
             GenerateTileAt(tilePos);
-            // Yield after generating each tile to spread tile generation over multiple frames
             yield return null;
         }
 
         CullDistantTiles(playerTilePos);
     }
+
 
 
     void CullDistantTiles(Vector2 playerTilePos)
@@ -151,17 +155,17 @@ public class MapManager : MonoBehaviour
     {
         if (tileObject == null) yield break;
 
-        for (int i = 0; i < 3; i++) // For placing 3 objects
-        {
+        //for (int i = 0; i < 3; i++) // For placing 3 objects
+        //{
             // Check again in case tileObject was destroyed during the coroutine wait
             if (tileObject == null) yield break;
             yield return StartCoroutine(AttemptToPlaceObjectInTile(tileObject, 0));
-        }
+        //}
     }
 
     IEnumerator AttemptToPlaceObjectInTile(GameObject tileObject, int attemptCount)
     {
-        if (tileObject == null || attemptCount > 10)
+        if (tileObject == null || attemptCount > 5)
         {
             //Debug.LogWarning("Attempt to place object in tile was aborted due to null tileObject or excessive attempts.");
             yield break;

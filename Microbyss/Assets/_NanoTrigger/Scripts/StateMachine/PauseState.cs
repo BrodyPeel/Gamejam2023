@@ -11,7 +11,6 @@ public class PauseState : IState
         MenuController.Instance.ShowMenu(MenuController.Instance.pauseMenu);
         MenuController.Instance.eventSystem.SetSelectedGameObject(MenuController.Instance.pauseMenu.resumeButton);
         Time.timeScale = 0f;
-        // "What was that!?"
     }
 
     public void UpdateState(StateController sc)

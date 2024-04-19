@@ -30,9 +30,9 @@ public class Spawned : Enemy
     }
 
     // Update is called once per frame
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
 
         if (dead) return;
 
@@ -123,7 +123,7 @@ public class Spawned : Enemy
     {
         //instantiate projectiles? 
         //fire towards player
-        Debug.Log("ATTACK");
+       // Debug.Log("ATTACK");
     }
 
     public override void TakeDamage(float damage)

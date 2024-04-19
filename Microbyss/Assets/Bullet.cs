@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             // Deal damage to the enemy
-            Debug.Log("Bullet Hit Enemy");
+            //Debug.Log("Bullet Hit Enemy");
             enemy.TakeDamage(damage);
         }
 

@@ -33,9 +33,9 @@ public class Spawner : Enemy
         }
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
 
         if (dead || playerTransform == null) return;
 
