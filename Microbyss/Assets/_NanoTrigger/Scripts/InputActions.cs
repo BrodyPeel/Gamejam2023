@@ -104,6 +104,61 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""ed9623d5-5fbc-4f46-8982-ea845e981848"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""3649a4a8-10a2-4449-92a4-b50f493215d0"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""17cf2762-95c0-417f-981e-44ce44622ec5"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""1c162723-a76d-461d-bcbf-09c2527133d2"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""8da38d3e-777b-46d0-a95f-b2f4f3ecf3b3"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""e0b46651-2036-4035-b122-2091515936bf"",
                     ""path"": ""<Gamepad>/rightStick"",
@@ -113,6 +168,61 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""PrimaryFire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""a557f9f5-ae3d-472f-a192-7dc66a76faae"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryFire"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""9f987e60-63c3-47d8-9ab6-bd8052033a8e"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""7346d751-2340-4834-b73e-9e927e308933"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""76fc4141-c320-43c4-ad54-efdb2bb97e4b"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""5ac615b2-3597-44e6-8840-645513495661"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -327,12 +437,51 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""9e457e7d-56e7-4f2a-b650-47cce9297343"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""448bedc8-d7cf-4c8f-93b9-b99f044d8c33"",
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller device"",
                     ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""NULL"",
+            ""id"": ""2f326062-d06a-4994-99c5-6f0aa259da91"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""686c6a65-3393-47db-9790-275cd33f09cd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f99d2a1e-a90d-40a7-add9-8fdb0016d8d3"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -367,6 +516,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Menus_Navigate = m_Menus.FindAction("Navigate", throwIfNotFound: true);
         m_Menus_Select = m_Menus.FindAction("Select", throwIfNotFound: true);
         m_Menus_Back = m_Menus.FindAction("Back", throwIfNotFound: true);
+        // NULL
+        m_NULL = asset.FindActionMap("NULL", throwIfNotFound: true);
+        m_NULL_Newaction = m_NULL.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -580,6 +732,52 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public MenusActions @Menus => new MenusActions(this);
+
+    // NULL
+    private readonly InputActionMap m_NULL;
+    private List<INULLActions> m_NULLActionsCallbackInterfaces = new List<INULLActions>();
+    private readonly InputAction m_NULL_Newaction;
+    public struct NULLActions
+    {
+        private @InputActions m_Wrapper;
+        public NULLActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_NULL_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_NULL; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(NULLActions set) { return set.Get(); }
+        public void AddCallbacks(INULLActions instance)
+        {
+            if (instance == null || m_Wrapper.m_NULLActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_NULLActionsCallbackInterfaces.Add(instance);
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
+        }
+
+        private void UnregisterCallbacks(INULLActions instance)
+        {
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
+        }
+
+        public void RemoveCallbacks(INULLActions instance)
+        {
+            if (m_Wrapper.m_NULLActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(INULLActions instance)
+        {
+            foreach (var item in m_Wrapper.m_NULLActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_NULLActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public NULLActions @NULL => new NULLActions(this);
     private int m_ControllerdeviceSchemeIndex = -1;
     public InputControlScheme ControllerdeviceScheme
     {
@@ -604,5 +802,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnNavigate(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
+    }
+    public interface INULLActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }
