@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.Instance.state.isState("PlayState"))
         {
-            Vector2 movementInput = context.ReadValue<Vector2>();
+            Vector2 movementInput = context.ReadValue<Vector2>();           
             float speed = isBoosting ? moveSpeed[upgradeLevel - 1] + boostSpeed : moveSpeed[upgradeLevel - 1];
 
 
